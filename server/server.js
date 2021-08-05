@@ -19,11 +19,6 @@ MongoClient.connect('mongodb://localhost:27017')
     const activitiesRouter = createRouter(activitiesCollection);
     app.use('/api/activities', activitiesRouter);
 
-    const db = client.db('charities'); 
-    const charityCollection = db.collection('charities');
-    const charitiesRouter = createRouter(charitiesCollection);
-    app.use('/api/charities', charitiesRouter);
-
     const db = client.db('rewards'); 
     const rewardCollection = db.collection('rewards');
     const rewardsRouter = createRouter(rewardsCollection);
