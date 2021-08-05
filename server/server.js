@@ -9,22 +9,22 @@ app.use(express.json());
 
 MongoClient.connect('mongodb://localhost:27017')
   .then((client) => {
-    const db = client.db('users'); 
+    const db = client.db('users');
     const userCollection = db.collection('users');
     const usersRouter = createRouter(usersCollection);
     app.use('/api/users', usersRouter);
 
-    const db = client.db('activities'); 
-    const activityCollection = db.collection('activites');
+    const db = client.db('activities');
+    const activityCollection = db.collection('activities');
     const activitiesRouter = createRouter(activitiesCollection);
     app.use('/api/activities', activitiesRouter);
 
-    const db = client.db('charities'); 
+    const db = client.db('charities');
     const charityCollection = db.collection('charities');
     const charitiesRouter = createRouter(charitiesCollection);
     app.use('/api/charities', charitiesRouter);
 
-    const db = client.db('rewards'); 
+    const db = client.db('rewards');
     const rewardCollection = db.collection('rewards');
     const rewardsRouter = createRouter(rewardsCollection);
     app.use('/api/rewards', rewardsRouter);
@@ -32,5 +32,5 @@ MongoClient.connect('mongodb://localhost:27017')
   .catch(console.err);
 
 app.listen(5000, function () {
-  console.log(`Listening on port ${ this.address().port }`);
+  console.log(`Listening on port ${this.address().port}`);
 });
