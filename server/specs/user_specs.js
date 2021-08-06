@@ -11,7 +11,7 @@ describe('User', () => {
         scott = new User("Scott Kivlin", new Date(1991, 1, 4), "I'm trying to help", 100, [reward], "s_kivlin@hotmail.com", "07777777777")
     })
 
-    it('should be able to get an age from dob of birth', () => {
+    it('should be able to get an age from date of birth', () => {
         const age = scott.age();
         assert.strictEqual(age, 30);
     })
