@@ -1,18 +1,24 @@
 const Activity = require("../classes/activity.js");
 
-const activity1 = new Activity("Clean up the park", "Volunteer Edinburgh", "three hours", "Holyrood park", 30)
+const activity1 = new Activity(
+  "Clean up the park",
+  "Volunteer Edinburgh",
+  "three hours",
+  "Holyrood park",
+  30
+);
 
-const MongoClient = require('mongodb').MongoClient;
+const MongoClient = require("mongodb").MongoClient;
 
-MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
+MongoClient.connect("mongodb://localhost:27017", { useUnifiedTopology: true })
   .then((client) => {
-    const db = client.db('helpr');
-    db.dropDatabase(); 
-
-    const usersCollection = db.collection('users');
-    const activitiesCollection = db.collection('activites');
-    activitiesCollection.insertMany([activity1])
-    const rewardsCollection = db.collection('rewards');
+    const db = client.db("helpr");
+    db.dropDatabase();
+    const charityCollection = db.collection("charity");
+    const usersCollection = db.collection("users");
+    const activitiesCollection = db.collection("activites");
+    const rewardsCollection = db.collection("rewards");
     
+    activitiesCollection.insertMany([activity1]).then((() => client.close());
   })
   .catch(console.err);
