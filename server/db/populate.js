@@ -3,31 +3,6 @@ const Reward = require("../classes/reward.js");
 const User = require("../classes/user.js");
 const Charity = require("../classes/charity.js");
 
-const reward1 = new Reward(
-  "steam",
-  "get 20% off next steam sale",
-  "terms and conditions",
-  500,
-  new Date(2022, 3, 14),
-  "digital"
-);
-const reward2 = new Reward(
-  "pizza hut",
-  "£10 off your next order",
-  "terms and conditions",
-  500,
-  new Date(2251, 0, 5),
-  "food"
-);
-const reward3 = new Reward(
-  "costa",
-  "BOGOF",
-  "terms and conditions",
-  700,
-  new Date(2023, 0, 13),
-  "coffee"
-);
-
 const MongoClient = require("mongodb").MongoClient;
 
 MongoClient.connect("mongodb://localhost:27017", { useUnifiedTopology: true })
@@ -39,6 +14,31 @@ MongoClient.connect("mongodb://localhost:27017", { useUnifiedTopology: true })
     const charityCollection = db.collection("charity");
     const usersCollection = db.collection("users");
     const activitiesCollection = db.collection("activites");
+
+    const reward1 = new Reward(
+      "steam",
+      "get 20% off next steam sale",
+      "terms and conditions",
+      500,
+      new Date(2022, 3, 14),
+      "digital"
+    );
+    const reward2 = new Reward(
+      "pizza hut",
+      "£10 off your next order",
+      "terms and conditions",
+      500,
+      new Date(2251, 0, 5),
+      "food"
+    );
+    const reward3 = new Reward(
+      "costa",
+      "BOGOF",
+      "terms and conditions",
+      700,
+      new Date(2023, 0, 13),
+      "coffee"
+    );
 
     const rewardsUsersPromise = rewardsCollection
       .insertMany([reward1, reward2, reward3])
@@ -127,38 +127,15 @@ MongoClient.connect("mongodb://localhost:27017", { useUnifiedTopology: true })
       userIds = Object.values(data[0].insertedIds);
       activityIds = Object.values(data[1].insertedIds);
 
-      const application1 = {
-        user_id: userIds[0],
-        activity_id: activityIds[1],
-        status: "pending",
-      };
-      const application2 = {
-        user_id: userIds[1],
-        activity_id: activityIds[1],
-        status: "approved",
-      };
-      const application3 = {
-        user_id: userIds[3],
-        activity_id: activityIds[0],
-        status: "completed",
-      };
-
-      const charity1 = new Charity(
-        "Rosendael",
-        [activityIds[1]],
-        [application1, application2]
-      );
-      const charity2 = new Charity(
-        "British Heart Foundation",
-        [activityIds[2]],
-        []
-      );
-      const charity3 = new Charity("Scottish Book Trust", [activityIds[3]], []);
-      const charity4 = new Charity(
-        "Volunteer Edinburgh",
-        [activityIds[0]],
-        [application3]
-      );
+      const charity1 = new Charity("Rosendael", [activityIds[1]]);
+      charity1.receiveApplication(userIds[0], activityIds[1]);
+      charity1.receiveApplication(userIds[1], activityIds[1]);
+      const charity2 = new Charity("British Heart Foundation", [
+        activityIds[2],
+      ]);
+      const charity3 = new Charity("Scottish Book Trust", [activityIds[3]]);
+      const charity4 = new Charity("Volunteer Edinburgh", [activityIds[0]]);
+      charity4.receiveApplication(userIds[3], activityIds[0]);
       charityCollection
         .insertMany([charity1, charity2, charity3, charity4])
         .then(() => client.close());
