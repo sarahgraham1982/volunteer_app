@@ -1,10 +1,10 @@
 class User {
-    constructor(fullName, dob, aboutMe, points, redeemedRewards, email, phoneNumber) {
+    constructor(fullName, dob, aboutMe, points, activeRewards, email, phoneNumber) {
         this.fullName = fullName;
         this.dob = dob;
         this.aboutMe = aboutMe;
         this.points = points;
-        this.redeemedRewards = redeemedRewards;
+        this.activeRewards = activeRewards;
         this.email = email;
         this.phoneNumber = phoneNumber;
     }

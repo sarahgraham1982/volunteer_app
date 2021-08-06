@@ -1,6 +1,9 @@
 class Charity {
-    constructor(name, postings) {
-        this.name = name;
-        this.postings = postings
-    }
+  constructor(name, activities, applications) {
+    this.name = name;
+    this.activities = activities;
+    this.applications = applications;
+  }
 }
+
+module.exports = Charity;
