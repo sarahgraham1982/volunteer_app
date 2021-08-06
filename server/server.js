@@ -9,25 +9,21 @@ app.use(express.json());
 
 MongoClient.connect('mongodb://localhost:27017')
   .then((client) => {
-    const db = client.db('users');
-    const userCollection = db.collection('users');
+
+    const db = client.db('helpr'); 
+
+    const usersCollection = db.collection('users');
     const usersRouter = createRouter(usersCollection);
     app.use('/api/users', usersRouter);
 
-    const db = client.db('activities');
-    const activityCollection = db.collection('activities');
+    const activitiesCollection = db.collection('activites');
     const activitiesRouter = createRouter(activitiesCollection);
     app.use('/api/activities', activitiesRouter);
 
-    const db = client.db('charities');
-    const charityCollection = db.collection('charities');
-    const charitiesRouter = createRouter(charitiesCollection);
-    app.use('/api/charities', charitiesRouter);
-
-    const db = client.db('rewards');
-    const rewardCollection = db.collection('rewards');
+    const rewardsCollection = db.collection('rewards');
     const rewardsRouter = createRouter(rewardsCollection);
     app.use('/api/rewards', rewardsRouter);
+    
   })
   .catch(console.err);
 
