@@ -3,9 +3,9 @@ const Reward = require("../classes/reward.js");
 const User = require("../classes/user.js");
 const Charity = require("../classes/charity.js");
 
-const MongoClient = require("mongodb").MongoClient;
+const MongoClient = require('mongodb').MongoClient;
 
-MongoClient.connect("mongodb://localhost:27017", { useUnifiedTopology: true })
+MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
   .then((client) => {
     const db = client.db("helpr");
     db.dropDatabase();
