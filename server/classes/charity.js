@@ -1,17 +1,9 @@
 class Charity {
-  constructor(name, activities) {
+  constructor(name, description) {
     this.name = name;
-    this.activities = activities;
-    this.applications = [];
+    this.description = description;
   }
-
-  receiveApplication(user_id, activity_id) {
-    this.applications.push({
-      user_id,
-      activity_id,
-      status: "pending",
-    });
-  }
+  
 }
 
 module.exports = Charity;
