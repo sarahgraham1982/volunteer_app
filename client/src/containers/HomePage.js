@@ -8,18 +8,20 @@ const HomePage = () => {
          
       <div className="top">
         <div className="welcome-text">
-          <h1>Welcome!</h1>
-          <p>to our new volunteering app!</p>
+          <h1>Welcome Message!</h1>
+          <p>call to action subtitle</p>
         </div>
 
+        <h1> search bar goes here </h1>
+
         <div className="button">
-          <a href ="/activities">View Activities</a>
+          <a href ="/activities">View All Activities</a>
         </div> 
       </div> 
 
       <div className="middle">
-        <div className="image">
-        <img src={welcome} alt="welcome"></img>        
+        <div className="welcome-image">
+        <img src={welcome} alt="welcome" class="responsive" ></img>        
         </div> 
       </div>           
     </div>
