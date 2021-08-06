@@ -1,16 +1,30 @@
 import React from "react";
 import '../css/HomePage.css';
+import welcome from './welcome.png';
 
 const HomePage = () => {
-  return (
-    <div>
-      <h4>Home</h4>
+  return ( 
+    <div className="welcome-container">
+         
+      <div className="top">
+        <div className="welcome-text">
+          <h1>Welcome!</h1>
+          <p>to our new volunteering app!</p>
+        </div>
+
+        <div className="button">
+          <a href ="/projects">View Activities</a>
+        </div> 
+      </div> 
+
+      <div className="middle">
+        <div className="image">
+        <img src={welcome} alt="welcome"></img>        
+        </div> 
+      </div>           
     </div>
-    <div className="right">
-      <div className="welcome-image">
-        <img src="/welcome.png" alt="welcome" width="500" height="500" />
-      </div>
-  );
-}
+    );
+  };
+ 
 
 export default HomePage;
