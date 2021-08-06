@@ -13,7 +13,7 @@ const HomePage = () => {
         </div>
 
         <div className="button">
-          <a href ="/projects">View Activities</a>
+          <a href ="/activities">View Activities</a>
         </div> 
       </div> 
 
