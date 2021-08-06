@@ -14,10 +14,11 @@ MongoClient.connect("mongodb://localhost:27017", { useUnifiedTopology: true })
   .then((client) => {
     const db = client.db("helpr");
     db.dropDatabase();
-
+    const charityCollection = db.collection("charity");
     const usersCollection = db.collection("users");
     const activitiesCollection = db.collection("activites");
-    activitiesCollection.insertMany([activity1]).then(() => client.close());
     const rewardsCollection = db.collection("rewards");
+    
+    activitiesCollection.insertMany([activity1]).then((() => client.close());
   })
   .catch(console.err);

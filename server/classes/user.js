@@ -1,9 +1,9 @@
 class User {
-    constructor(fullName, dob, aboutMe, noOfPoints, redeemedRewards, email, phoneNumber) {
+    constructor(fullName, dob, aboutMe, points, redeemedRewards, email, phoneNumber) {
         this.fullName = fullName;
         this.dob = dob;
         this.aboutMe = aboutMe;
-        this.noOfPoints = noOfPoints;
+        this.points = points;
         this.redeemedRewards = redeemedRewards;
         this.email = email;
         this.phoneNumber = phoneNumber;
