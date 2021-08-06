@@ -1,5 +1,5 @@
 class Reward {
-    constructor(company, title, description, pointsRequired, expiryDate) {
+    constructor(company, title, description, pointsRequired, expiryDate,) {
         this.company = company;
         this.title = title;
         this.description = description;
