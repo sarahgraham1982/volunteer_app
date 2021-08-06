@@ -1,5 +1,45 @@
+const Activity = require("../classes/activity");
+const users = require("../classes/user")
+const rewards = require(../classes/reward)
+
+
 use activity;
 db.dropDatabase();
+
+const activity1 = new Activity("Clean up the park", "Volunteer Edinburgh", "three hours", "Holyrood park", 30)
+
+const activity2 = new Activity("help our boys", "Rosendael - Scottish Veterans Residences",
+    "meet and talk to some of our boys that need hand make some new friends", "an afternoon", "an afternoon", 170)
+
+const activity3 = new Activity("clean up the shops", "British Heart Foundation",
+    "clean out our store rooms and maybe have a cup of tea", "two and a half hours", "136 Lothian Rd Edinburgh", 20)
+
+const activity4 = new Activity("Book collection", "Scottish Book Trust", " Need a car to drive around town ",
+    "8 hours", "Edinburgh")
+
+const user1 = new user("Scott Russel George Kivlin ", new Date(1991, 1, 4), "I'm trying to help", 230)
+
+const user2 = new user("Sarah Victoria Graham ", new Date(1988, 3, 7), "the points are so handy for nights in and out ", 480)
+
+const user3 = new user("Sam Hudson Hill", new Date(1999, 10, 11), "You know I helped make this app ", 460)
+
+const user4 = new user("Garry Hall ", (1993, 17, 3), "You know I also helped make this app ", 450)
+
+const reward1 = new reward("steam", "get 20% off next steam sale", "terms and conditions", new Date(2022, 3, 14))
+
+const reward2 = new reward("pizza hut", "£10 off your next order", "terms and conditions", new Date(2251, 0, 5))
+
+const reward3 = new reward("costa", "BOGF", "terms and conditions", new Date(2023, 0, 13))
+
+const reward4 = new reward("Lemon Squeezy Driving School", "free lesson when you book 10", "terms and conditions", new Date(2023, 10, 10))
+
+const charity1 = new charity("Rosendael", "help our boys")
+
+const charity2 = new charity("British Heart Foundation", "clean up the shops")
+
+const charity3 = new charity("Scottish Book Trust", "Book collection")
+
+const charity4 = new charity("Volunteer Edinburgh", "Clean up the park")
 
 // db.activities.insertMany([
 //     activity1,
@@ -8,7 +48,7 @@ db.dropDatabase();
 //         charity: "Rosendael - Scottish Veterans Residences",
 //         description: "meat and talk to some of our boys that need hand make some new friends ",
 //         duration: "an afternoon",
-//         location: "3 Victoria Rd, Broughty Ferry",
+//         location:"an afternoon",
 //         points: 170
 
 //     },
