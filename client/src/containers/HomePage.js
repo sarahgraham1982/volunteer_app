@@ -1,5 +1,6 @@
 import React from "react";
 import '../css/HomePage.css';
+import SearchBar from "../components/SearchBar";
 import welcome from './welcome.png';
 
 const HomePage = () => {
@@ -11,8 +12,6 @@ const HomePage = () => {
           <h1>Welcome Message!</h1>
           <p>call to action subtitle</p>
         </div>
-
-        <h1> search bar goes here </h1>
 
         <div className="button">
           <a href ="/activities">View All Activities</a>
