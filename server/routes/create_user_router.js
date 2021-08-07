@@ -1,15 +1,14 @@
 const express = require("express");
 const errorCatchBuild = require("../helpers/error_catch.js");
-const repository = require("../repositories/repository.js");
+const userRepository = require("../repositories/user_repository.js");
 
-function createRouter(collection) {
-
+function createUserRouter(userCollection, rewardCollection) {
   const router = express.Router();
 
   //INDEX (GET)
   router.get("/", (req, res) => {
-    repository
-      .getAll(collection)
+    userRepository
+      .getAll(userCollection, rewardCollection)
       .then((allItems) => res.json(allItems))
       .catch(errorCatchBuild(res));
   });
@@ -17,8 +16,8 @@ function createRouter(collection) {
   //SHOW (GET)
   router.get("/:id", (req, res) => {
     const id = req.params.id;
-    repository
-      .getOne(collection, id)
+    userRepository
+      .getOne(userCollection, rewardCollection, id)
       .then((result) => res.json(result))
       .catch(errorCatchBuild(res));
   });
@@ -26,25 +25,26 @@ function createRouter(collection) {
   // CREATE (POST)
   router.post("/", (req, res) => {
     const newData = req.body;
-    repository
-      .save(collection, newData)
-      .then((newReward) => res.json(newReward))
+    userRepository
+      .save(userCollection, newData)
+      .then((newUser) => res.json(newUser))
       .catch(errorCatchBuild(res));
   });
 
   // UPDATE (PUT)
-  router.put('/:id', (req, res) => {
+  router.put("/:id", (req, res) => {
     const id = req.params.id;
     const updateData = req.body;
-    repository.update(collection, id, updateData)
-    .then((updatedItem) => res.json(updatedItem))
-    .catch(errorCatchBuild(res));
+    userRepository
+      .update(userCollection, rewardCollection, id, updateData)
+      .then((updatedItem) => res.json(updatedItem))
+      .catch(errorCatchBuild(res));
   });
 
   // DESTROY (DELETE)
   router.delete('/:id', (req, res) => {
     const id = req.params.id;
-    repository.destroy(collection, id)
+    userRepository.destroy(userCollection, rewardCollection, id)
     .then(allItems =>  res.json(allItems))
     .catch(errorCatchBuild(res));
   });
@@ -52,4 +52,4 @@ function createRouter(collection) {
   return router;
 }
 
-module.exports = createRouter;
+module.exports = createUserRouter;

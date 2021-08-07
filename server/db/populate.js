@@ -11,7 +11,7 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
     db.dropDatabase();
 
     const rewardsCollection = db.collection("rewards");
-    const charityCollection = db.collection("charity");
+    const charityCollection = db.collection("charities");
     const usersCollection = db.collection("users");
     const activitiesCollection = db.collection("activities");
 
