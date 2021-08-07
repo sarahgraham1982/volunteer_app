@@ -1,14 +1,24 @@
 const express = require("express");
 const errorCatchBuild = require("../helpers/error_catch.js");
-const repository = require("../repositories/repository.js");
+const activityRepository = require("../repositories/activity_repository.js");
 
-function createRouter(collection) {
+function createActivityRouter(
+  activityCollection,
+  userCollection,
+  charityCollection,
+  rewardCollection
+) {
   const router = express.Router();
 
   //INDEX (GET)
   router.get("/", (req, res) => {
-    repository
-      .getAll(collection)
+    activityRepository
+      .getAll(
+        activityCollection,
+        userCollection,
+        charityCollection,
+        rewardCollection
+      )
       .then((allItems) => res.json(allItems))
       .catch(errorCatchBuild(res));
   });
@@ -16,8 +26,14 @@ function createRouter(collection) {
   //SHOW (GET)
   router.get("/:id", (req, res) => {
     const id = req.params.id;
-    repository
-      .getOne(collection, id)
+    activityRepository
+      .getOne(
+        activityCollection,
+        userCollection,
+        charityCollection,
+        rewardCollection,
+        id
+      )
       .then((result) => res.json(result))
       .catch(errorCatchBuild(res));
   });
@@ -25,9 +41,9 @@ function createRouter(collection) {
   // CREATE (POST)
   router.post("/", (req, res) => {
     const newData = req.body;
-    repository
-      .save(collection, newData)
-      .then((newReward) => res.json(newReward))
+    activityRepository
+      .save(userCollection, newData)
+      .then((newUser) => res.json(newUser))
       .catch(errorCatchBuild(res));
   });
 
@@ -35,8 +51,15 @@ function createRouter(collection) {
   router.put("/:id", (req, res) => {
     const id = req.params.id;
     const updateData = req.body;
-    repository
-      .update(collection, id, updateData)
+    activityRepository
+      .update(
+        activityCollection,
+        userCollection,
+        charityCollection,
+        rewardCollection,
+        id,
+        updateData
+      )
       .then((updatedItem) => res.json(updatedItem))
       .catch(errorCatchBuild(res));
   });
@@ -44,8 +67,8 @@ function createRouter(collection) {
   // DESTROY (DELETE)
   router.delete("/:id", (req, res) => {
     const id = req.params.id;
-    repository
-      .destroy(collection, id)
+    activityRepository
+      .destroy(userCollection, rewardCollection, id)
       .then((allItems) => res.json(allItems))
       .catch(errorCatchBuild(res));
   });
@@ -53,4 +76,4 @@ function createRouter(collection) {
   return router;
 }
 
-module.exports = createRouter;
+module.exports = createActivityRouter;

@@ -6,6 +6,7 @@ const MongoClient = require('mongodb').MongoClient;
 // Routes
 const createRouter = require('./helpers/create_router.js');
 const createUserRouter = require('./routes/create_user_router.js')
+createActivityRouter = require('./routes/create_activity_router.js')
 
 app.use(cors());
 app.use(express.json());
@@ -27,9 +28,9 @@ MongoClient.connect('mongodb://localhost:27017', {useUnifiedTopology: true})
      const usersRouter = createUserRouter(usersCollection, rewardsCollection);
      app.use('/api/users', usersRouter);
 
-    // const activitiesCollection = db.collection('activites');
-    // const activitiesRouter = createRouter(activitiesCollection);
-    // app.use('/api/activities', activitiesRouter);
+    const activitiesCollection = db.collection('activities');
+    const activitiesRouter = createActivityRouter(activitiesCollection, usersCollection, charitiesCollection, rewardsCollection);
+    app.use('/api/activities', activitiesRouter);
     
   })
   .catch(console.err);
