@@ -1,10 +1,11 @@
 class Reward {
-    constructor(company, title, description, pointsRequired, expiryDate,) {
+    constructor(company, title, description, points, expiryDate, category) {
         this.company = company;
         this.title = title;
         this.description = description;
-        this.pointsRequired = pointsRequired;
+        this.points = points;
         this.expiryDate = expiryDate;
+        this.category = category;
     }
 }
 

@@ -1,4 +1,5 @@
 class User {
+
     constructor(fullName, dob, aboutMe, noOfPoints, redeemedRewards, email, phoneNumber) {
         this.fullName = fullName;
         this.dob = dob;
