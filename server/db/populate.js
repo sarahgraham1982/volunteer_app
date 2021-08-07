@@ -33,7 +33,7 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
       "get 20% off next steam sale",
       "terms and conditions",
       500,
-      new Date(2022, 3, 14),
+      new Date(2022, 3, 14, 17, 30),
       "digital"
     );
     const reward2 = new Reward(
@@ -41,7 +41,7 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
       "£10 off your next order",
       "terms and conditions",
       500,
-      new Date(2251, 0, 5),
+      new Date(2251, 0, 5, 10, 15),
       "food"
     );
     const reward3 = new Reward(
@@ -49,7 +49,7 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
       "BOGOF",
       "terms and conditions",
       700,
-      new Date(2023, 0, 13),
+      new Date(2023, 0, 13, 14, 40)
       "coffee"
     );
 
