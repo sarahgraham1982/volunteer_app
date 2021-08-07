@@ -1,6 +1,6 @@
 const Activity = require("../classes/activity");
 const users = require("../classes/user")
-const rewards = require(../classes/reward)
+const rewards = require("../classes/reward")
 
 
 use activity;
