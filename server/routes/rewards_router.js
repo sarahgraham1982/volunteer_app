@@ -1,11 +1,9 @@
 const express = require("express");
+const router = express.Router();
 const errorCatchBuild = require("../helpers/error_catch.js");
 const repository = require("../repositories/repository.js");
 
-function createRouter(collection) {
-
-  const router = express.Router();
-
+function createRewardsRouter(collection) {
   //INDEX (GET)
   router.get("/", (req, res) => {
     repository
@@ -52,4 +50,4 @@ function createRouter(collection) {
   return router;
 }
 
-module.exports = createRouter;
+module.exports = createRewardsRouter;
