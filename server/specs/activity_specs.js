@@ -13,7 +13,6 @@ describe('activity', () => {
             450, [], "email@example.com", "07777777777")
     })
 
-
     it('should be able to get an description', () => {
         const description = activity.description;
         assert.strictEqual(description, "clean out our store rooms and maybe have a cup of tea");
