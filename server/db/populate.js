@@ -49,7 +49,7 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
       "BOGOF",
       "terms and conditions",
       700,
-      new Date(2023, 0, 13, 14, 40)
+      new Date(2023, 0, 13, 14, 40),
       "coffee"
     );
 
