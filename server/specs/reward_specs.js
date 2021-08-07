@@ -34,7 +34,7 @@ describe('reward', () => {
     })
     it('should be able to get an expiryDate', () => {
         const expiryDate = reward.expiryDate;
-        assert.strictEqual("expiryDate", (2022, 3, 14, 17, 30));
+        assert.strictEqual(expiryDate.getFullYear(), 2022);
     })
     it('should be able to get an category', () => {
         const category = reward.category;
