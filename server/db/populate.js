@@ -13,18 +13,13 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
     const rewardsCollection = db.collection("rewards");
     const charityCollection = db.collection("charity");
     const usersCollection = db.collection("users");
-    const activitiesCollection = db.collection("activites");
+    const activitiesCollection = db.collection("activities");
 
     const charity1 = new Charity("Rosendael", "Scottish veterans residence");
     const charity2 = new Charity("British Heart Foundation", "Heart Charity");
-    const charity3 = new Charity(
-      "Scottish Book Trust",
-      "Transforming lives through reading"
-    );
-    const charity4 = new Charity(
-      "Volunteer Edinburgh",
-      "We have been helping all sorts of people in Edinburgh find volunteering for over 45 years"
-    );
+    const charity3 = new Charity("Scottish Book Trust", "Transforming lives through reading");
+    const charity4 = new Charity("Volunteer Edinburgh",
+      "We have been helping all sorts of people in Edinburgh find volunteering for over 45 years");
 
     const charityPromise = charityCollection.insertMany([
       charity1,
@@ -62,7 +57,7 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
       .insertMany([reward1, reward2, reward3])
       .then((data) => {
         const [reward1, reward2, reward3] = data.ops;
-      
+
         const user1 = new User(
           "Scott Russel George Kivlin ",
           new Date(1991, 1, 4),
@@ -106,7 +101,7 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
       const [userData, charityData] = data
       const [user1, user2, user3, user4] = Object.values(userData.ops)
       const [rosendael, bhf, scottishBookTrust, volunteerEdinburgh] = Object.values(charityData.ops)
-      
+
       const activity1 = new Activity(
         "Clean up the park",
         volunteerEdinburgh._id,
@@ -143,7 +138,7 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
         "Edinburgh",
         230
       );
-        return activitiesCollection.insertMany([activity1, activity2, activity3, activity4])
+      return activitiesCollection.insertMany([activity1, activity2, activity3, activity4])
     }).then(() => client.close())
   })
   .catch(console.err);
