@@ -117,6 +117,7 @@ function fillInActivity(
       activity.duration,
       activity.location,
       activity.points,
+      activity.datetime,
       activity.applications
     );
     newActivity._id = activity._id;
