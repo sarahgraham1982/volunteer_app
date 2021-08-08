@@ -12,6 +12,8 @@ const HomePage = () => {
           <p>call to action subtitle</p>
         </div>
 
+        <h1> search bar goes here </h1>
+
         <div className="button">
           <a href ="/activities">View All Activities</a>
         </div> 

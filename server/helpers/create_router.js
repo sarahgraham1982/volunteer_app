@@ -1,56 +1,86 @@
-const express = require("express");
-const errorCatchBuild = require("../helpers/error_catch.js");
-const repository = require("../repositories/repository.js");
+const express = require('express');
+const ObjectID = require('mongodb').ObjectID;
 
-function createRouter(collection) {
+const createRouter = function (collection) {
+
   const router = express.Router();
 
   //INDEX (GET)
-  router.get("/", (req, res) => {
-    repository
-      .getAll(collection)
-      .then((allItems) => res.json(allItems))
-      .catch(errorCatchBuild(res));
+  router.get('/', (req, res) => {
+    collection
+      .find()
+      .toArray()
+      .then((docs) => res.json(docs))
+      .catch((err) => {
+        console.error(err);
+        res.status(500);
+        res.json({ status: 500, error: err });
+      });
   });
 
   //SHOW (GET)
-  router.get("/:id", (req, res) => {
+  router.get('/:id', (req, res) => {
     const id = req.params.id;
-    repository
-      .getOne(collection, id)
-      .then((result) => res.json(result))
-      .catch(errorCatchBuild(res));
+    collection
+      .findOne({ _id: ObjectID(id) })
+      .then((doc) => res.json(doc))
+      .catch((err) => {
+        console.error(err);
+        res.status(500);
+        res.json({ status: 500, error: err });
+      });
   });
 
   // CREATE (POST)
-  router.post("/", (req, res) => {
+  router.post('/', (req, res) => {
     const newData = req.body;
-    repository
-      .save(collection, newData)
-      .then((newReward) => res.json(newReward))
-      .catch(errorCatchBuild(res));
+    collection
+      .insertOne(newData)
+      .then((result) => {
+        res.json(result.ops[0])
+      })
+      .catch((err) => {
+        console.error(err);
+        res.status(500);
+        res.json({ status: 500, error: err })
+      });
   });
 
   // UPDATE (PUT)
-  router.put("/:id", (req, res) => {
+  router.put('/:id', (req, res) => {
     const id = req.params.id;
     const updateData = req.body;
-    repository
-      .update(collection, id, updateData)
-      .then((updatedItem) => res.json(updatedItem))
-      .catch(errorCatchBuild(res));
+    collection
+    .updateOne(
+      { _id: ObjectID(id)},
+      { $set: updateData }
+    )
+    .then((result) => {
+      res.json(result)
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500);
+      res.json({ status: 500, error: err});
+    });
   });
 
   // DESTROY (DELETE)
-  router.delete("/:id", (req, res) => {
+  router.delete('/:id', (req, res) => {
     const id = req.params.id;
-    repository
-      .destroy(collection, id)
-      .then((allItems) => res.json(allItems))
-      .catch(errorCatchBuild(res));
+    collection
+    .deleteOne({ _id: ObjectID(id) })
+    .then(result => {
+      res.json(result)
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500);
+      res.json({ status: 500, error: err })
+    });
   });
 
   return router;
-}
+};
 
 module.exports = createRouter;
