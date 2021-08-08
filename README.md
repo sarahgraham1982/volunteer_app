@@ -33,6 +33,8 @@ npm run server:dev
 ```
 cd ../client
 npm install
-npm install react-router-dom
+npm install react react-router-dom react-dom leaflet
+npm install react-leaflet
+npm install react-leaflet@3.1.0 @react-leaflet/core@1.0.2
 npm start
 ```
