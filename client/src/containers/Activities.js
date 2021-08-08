@@ -9,6 +9,7 @@ const Activities = () => {
 
   const [activities, setActivities] = useState([]);
   const [filter, setFilter] = useState('');
+  const [listView, setListView] = useState(true);
 
   useEffect(() => {
     getActivities().then((activities)=>{
@@ -36,11 +37,12 @@ const Activities = () => {
     setFilter('');
   }
 
-  const toggleDisplay = () => {
-    const mapView = document.getElementById("mapView");
-    mapView.classList.toggle("hidden");
-    const listView =document.getElementById("listView");
-    listView.classList.toggle("hidden");
+  const handleChange = () => {
+    if(listView){
+      setListView(false)
+    } else {
+      setListView(true)
+    }
   }
 
   return (
@@ -51,12 +53,8 @@ const Activities = () => {
         getActivitiesByPostcode={getActivitiesByPostcode}
         resetActivities={resetActivities}
       />
-      <div id="listView">
-        <ActivityList toggleDisplay={toggleDisplay} activities={activities}/>
-      </div>
-      <div id="mapView" className="hidden">
-        <ActivityMap toggleDisplay={toggleDisplay} activities={activities}/>
-      </div>
+      <p><button onClick={handleChange}>{listView ? "Map View" : "List View"}</button></p>
+      {listView ? <ActivityList activities={activities}/> : <ActivityMap activities={activities}/> }
     </>
   );
 }

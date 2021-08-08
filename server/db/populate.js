@@ -103,9 +103,9 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
       const [rosendael, bhf, scottishBookTrust, volunteerEdinburgh] = Object.values(charityData.ops)
 
       const activity1 = new Activity(
-        "Clean up the park",
+        "Clean up the park.",
         volunteerEdinburgh._id,
-        "We need people to clean up the park",
+        "Hill walking and helping the community come together in this action-packed Saturday morning sesh. You'll get your very own light weight grab and grip litter picker upper, a garbage bag, and a high vis vest. We'll let you loose in the craggy environs of Holyrood Park to spend the morning as you please. Wander through the dramatic landscape of this ancient volcanic wonderland of lochs and cliffs, peaks and valleys. A Little slice of the highlands right here in Edinburgh. Scour the earth for cigarette butts and broken bottles, used tissue and doggy poo bags. Think of yourself as something of an archaeologist that deals with the modern world, if that helps. We'll have a weigh off at 15:00 to win prizes for the top three pickers who collected the most litter.",
         "three hours",
         {
           description: "Holyrood Park",
@@ -118,9 +118,9 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
       activity1.receiveApplication(user2._id)
 
       const activity2 = new Activity(
-        "Help our boys",
+        "Help our boys.",
         rosendael._id,
-        "Meet and talk to some of our boys that need a hand. Make some new friends",
+        "We support youths in the community through mentorship and tutoring. We are looking for volunteer peers to spend time with our boys to help them develop constructive habits and healthy hobbies. Shoot some hoops, play guitar, or go for a hillwalk; the possibilities are open and we can offer a daily budget for any activities that are approved. Just no going to the pub, obviously. We could all use a strong role model in our lives. Take the time today to make a significant impact on a young man's life. Come down to the VA this Sunday at noon for a meet and greet where you will be paried with your mentee. We'll have tea and biscuits in the courtyard.",
         "an afternoon",
         {
           description: "53 Canongate, Edinburgh",
@@ -130,9 +130,9 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
         170
       );
       const activity3 = new Activity(
-        "Clean up the shops",
+        "Help clean out our store rooms and maybe have a cup of tea.",
         bhf._id,
-        "Help clean out our store rooms and maybe have a cup of tea",
+        "Our storage rooms are a dismal sight. With the pandemic we have been inundated with donations, but we have not been able to open the shop to sell anything. We're up to our necks in piles of clothing. A mound of unmarked bags are blocking the entrance to the garage. One of our employees may be trapped in there. Kitchenware is perched about the place in precarious cairns that reach to the ceiling. Now that we can finally open back up we need to sort things out fast. Come on down this Thursday to take a crack at it. We'll be sifting and sorting and shipping things off to our shops around the city. You might even get some good finds out of it. See a cool vintage jumper? Take it, it's yours.",
         "two and a half hours",
         {
           description: "136 Lothian Rd, Edinburgh",
@@ -145,7 +145,7 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
       const activity4 = new Activity(
         "Book collection",
         scottishBookTrust._id,
-        "Need a car to drive around town ",
+        "Books. Who doesn't love books? As restrictions lift, we are ready to get back out there and collect all the book donations that have been offered in the past few months, but we can't do it alone. Mostly because we don't have a car. So if you have one, that would be great. You can be our chauffeur for the day, cruising around town, driving the speed limit, etc. We'll do the navigating. We'll also provide the tunes. So if you have an aux cord or bluetooth that would be great, actually only apply if you have a decent enough stereo because it's going to be alot of driving, and I get carsick when I don't have anything to listen to and Sheila will start whistling if it's quiet and I can't stand her whistling.",
         "8 hours",
         {
           description: "55 High St, Edinburgh",

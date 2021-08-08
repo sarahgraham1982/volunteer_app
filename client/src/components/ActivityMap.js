@@ -1,11 +1,10 @@
 import React from 'react';
 import {MapContainer, TileLayer, Marker, Popup} from 'react-leaflet';
 
-const ActivityMap = ({activities, toggleDisplay}) => {
+const ActivityMap = ({activities}) => {
 
   return (
     <div>
-      <button onClick={toggleDisplay}>List View</button>
       <MapContainer
         center={[55.947762, -3.189037]}
         zoom={12}
@@ -26,8 +25,8 @@ const ActivityMap = ({activities, toggleDisplay}) => {
               >
                 <Popup>
                   <h3>{activity.title}</h3>
-                  <p>{activity.description}</p>
                   <p>{activity.duration}</p>
+                  <p>{activity.location.description}</p>
                 </Popup>
               </Marker>
             )
