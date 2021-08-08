@@ -5,8 +5,8 @@ const ActivityMap = ({activities}) => {
 
   return (
     <MapContainer
-      center={[56.621755, -4.138820]}
-      zoom={8}
+      center={[55.947762, -3.189037]}
+      zoom={12}
       scrollWheelZoom={false}
     >
       <TileLayer
@@ -20,10 +20,12 @@ const ActivityMap = ({activities}) => {
             <Marker
               key={activity.id}
               title={activity.title}
-              position={activity.coordinates}
+              position={activity.location.coordinates}
             >
               <Popup>
                 <h3>{activity.title}</h3>
+                <p>{activity.description}</p>
+                <p>{activity.duration}</p>
               </Popup>
             </Marker>
           )
