@@ -3,12 +3,9 @@ import '../css/HomePage.css';
 import welcome from './welcome.png';
 import UserMenu from "../components/UserMenu";
 
-const HomePage = ({allUsers, setUser}) => {
+const HomePage = ({user, allUsers, setUser}) => {
   return ( 
     <div className="welcome-container">
-         
-         <UserMenu allUsers={allUsers} setUser={setUser}/>
-
       <div className="top">
         <div className="welcome-text">
           <h1>Welcome Message!</h1>
@@ -18,6 +15,8 @@ const HomePage = ({allUsers, setUser}) => {
         <div className="button">
           <a href ="/activities">View All Activities</a>
         </div> 
+        <div>Change User:</div>
+        <UserMenu currentUser={user} allUsers={allUsers} setUser={setUser}/>
       </div> 
 
       <div className="middle">
