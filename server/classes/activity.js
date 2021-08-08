@@ -1,17 +1,14 @@
 class Activity {
-  constructor(title, charity, description, duration, location, points, datetime, applications) {
+  constructor(title, charity, description, duration, location, points, date, time) {
     this.title = title;
     this.charity = charity;
     this.description = description;
     this.duration = duration;
     this.location = location;
     this.points = points;
-    this.datetime = datetime;
-    if (!applications){
-      this.applications = []
-    } else{
-      this.applications = applications;
-    }
+    this.date = date;
+    this.time = time;
+    this.applications = [];
   }
   receiveApplication(user) {
     this.applications.push({
