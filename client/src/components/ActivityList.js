@@ -1,7 +1,7 @@
 import React from 'react';
 import ActivityDetails from './ActivityDetails';
 
-const ActivityList = ({activities}) => {
+const ActivityList = ({activities, toggleDisplay}) => {
 
   const activitiesList = activities.map((activity, index) => {
     return (
@@ -14,6 +14,7 @@ const ActivityList = ({activities}) => {
 
   return (
     <div>
+      <button onClick={toggleDisplay}>Map View</button>
       {activitiesList}
     </div>
   );
