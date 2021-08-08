@@ -29,7 +29,7 @@ const App = () => {
         <Header />
         <NavBar />
         <Switch>
-          <Route exact path="/" component={() => <HomePage allUsers={allUsers} setUser={setUser} />} />
+          <Route exact path="/" component={() => <HomePage user={user} allUsers={allUsers} setUser={setUser} />} />
           <Route path="/rewards" component={Rewards} />
           <Route path="/activities" component={Activities} />
           <Route path="/myaccount" component={() => <MyAccount user={user} />} />
