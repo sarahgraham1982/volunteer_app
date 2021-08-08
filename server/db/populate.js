@@ -19,7 +19,7 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
     const charity2 = new Charity("British Heart Foundation", "Heart Charity");
     const charity3 = new Charity("Scottish Book Trust", "Transforming lives through reading");
     const charity4 = new Charity("Volunteer Edinburgh",
-      "We have been helping all sorts of people in Edinburgh find volunteering for over 45 years");
+      "We have been helping all sorts of people in Edinburgh find volunteering opportunities for over 45 years");
 
     const charityPromise = charityCollection.insertMany([
       charity1,
@@ -70,7 +70,7 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
         const user2 = new User(
           "Sarah Victoria Graham ",
           new Date(1988, 3, 7),
-          "the points are so handy for nights in and out ",
+          "The points are so handy for nights in and out ",
           480,
           [reward1._id],
           "email@example.com",
@@ -79,7 +79,7 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
         const user3 = new User(
           "Sam Hudson Hill",
           new Date(1999, 10, 11),
-          "You know I helped make this app ",
+          "You know, I helped make this app ",
           460,
           [reward2._id],
           "email@example.com",
@@ -87,8 +87,8 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
         );
         const user4 = new User(
           "Garry Hall ",
-          (1993, 17, 3),
-          "You know I also helped make this app ",
+          new Date(1993, 17, 3),
+          "You know, I also helped make this app ",
           450,
           [reward2._id, reward3._id],
           "email@example.com",
@@ -105,28 +105,40 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
       const activity1 = new Activity(
         "Clean up the park",
         volunteerEdinburgh._id,
-        "we need people to clean up the park",
+        "We need people to clean up the park",
         "three hours",
-        "Holyrood park",
+        {
+          description: "Holyrood Park",
+          coordinates: [55.946538, -3.159791],
+          postcode: "EH88HG"
+        },
         30,
       );
       activity1.receiveApplication(user1._id)
       activity1.receiveApplication(user2._id)
 
       const activity2 = new Activity(
-        "help our boys",
+        "Help our boys",
         rosendael._id,
-        "meet and talk to some of our boys that need hand make some new friends",
+        "Meet and talk to some of our boys that need a hand. Make some new friends",
         "an afternoon",
-        "central Edinburgh",
+        {
+          description: "53 Canongate, Edinburgh",
+          coordinates: [55.952499, -3.175948],
+          postcode: "EH88BS"
+        },
         170
       );
       const activity3 = new Activity(
-        "clean up the shops",
+        "Clean up the shops",
         bhf._id,
-        "clean out our store rooms and maybe have a cup of tea",
+        "Help clean out our store rooms and maybe have a cup of tea",
         "two and a half hours",
-        "136 Lothian Rd Edinburgh",
+        {
+          description: "136 Lothian Rd, Edinburgh",
+          coordinates: [55.945229, -3.205543],
+          postcode: "EH39BG"
+        },
         20
       );
       activity3.receiveApplication(user4._id)
@@ -135,7 +147,11 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
         scottishBookTrust._id,
         "Need a car to drive around town ",
         "8 hours",
-        "Edinburgh",
+        {
+          description: "55 High St, Edinburgh",
+          coordinates: [55.950903, -3.185356],
+          postcode: "EH11SR"
+        },
         230
       );
       return activitiesCollection.insertMany([activity1, activity2, activity3, activity4])

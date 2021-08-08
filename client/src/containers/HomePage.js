@@ -1,6 +1,5 @@
 import React from "react";
 import '../css/HomePage.css';
-import SearchBar from "../components/SearchBar";
 import welcome from './welcome.png';
 
 const HomePage = () => {
