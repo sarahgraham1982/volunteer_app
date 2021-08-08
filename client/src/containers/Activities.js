@@ -1,4 +1,5 @@
 import {useState, useEffect} from "react";
+import '../css/Activities.css'
 import SearchBar from "../components/SearchBar";
 import ActivityList from "../components/ActivityList";
 import ActivityMap from "../components/ActivityMap";
@@ -35,6 +36,13 @@ const Activities = () => {
     setFilter('');
   }
 
+  const toggleDisplay = () => {
+    const mapView = document.getElementById("mapView");
+    mapView.classList.toggle("hidden");
+    const listView =document.getElementById("listView");
+    listView.classList.toggle("hidden");
+  }
+
   return (
     <>
       <SearchBar
@@ -43,9 +51,12 @@ const Activities = () => {
         getActivitiesByPostcode={getActivitiesByPostcode}
         resetActivities={resetActivities}
       />
-      <h4>Activities!</h4>
-      <ActivityList activities={activities}/>
-      <ActivityMap activities={activities}/>
+      <div id="listView">
+        <ActivityList toggleDisplay={toggleDisplay} activities={activities}/>
+      </div>
+      <div id="mapView" className="hidden">
+        <ActivityMap toggleDisplay={toggleDisplay} activities={activities}/>
+      </div>
     </>
   );
 }
