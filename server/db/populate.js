@@ -113,6 +113,7 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
           postcode: "EH88HG"
         },
         30,
+        new Date(2021, 10, 13, 14),
       );
       activity1.receiveApplication(user1._id)
       activity1.receiveApplication(user2._id)
@@ -127,7 +128,8 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
           coordinates: [55.952499, -3.175948],
           postcode: "EH88BS"
         },
-        170
+        170,
+        new Date(2021, 9, 3, 14),
       );
       const activity3 = new Activity(
         "Clean up the shops",
@@ -139,7 +141,8 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
           coordinates: [55.945229, -3.205543],
           postcode: "EH39BG"
         },
-        20
+        20,
+        new Date(2021, 9, 7, 14),
       );
       activity3.receiveApplication(user4._id)
       const activity4 = new Activity(
@@ -152,7 +155,8 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
           coordinates: [55.950903, -3.185356],
           postcode: "EH11SR"
         },
-        230
+        230,
+        new Date(2021, 10, 3, 16),
       );
       return activitiesCollection.insertMany([activity1, activity2, activity3, activity4])
     }).then(() => client.close())
