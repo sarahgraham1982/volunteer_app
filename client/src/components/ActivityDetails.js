@@ -6,6 +6,7 @@ const ActivityDetails = ({activity}) => {
   return (
     <div>
       <h1>{activity.title}</h1>
+      <h4>{activity.charity.name}</h4>
       <p>{activity.duration}</p>
       <p>{activity.location.description}</p>
       <Collapsible trigger="More Details>>">
