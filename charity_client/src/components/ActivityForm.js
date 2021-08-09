@@ -1,4 +1,5 @@
-import {useState} from "react";
+import { useState } from "react";
+import '../css/ActivityForm.css';
 import { postActivity } from "../services/ActivitiesService";
 
 const ActivityForm = ({addActivity}) => {
@@ -19,7 +20,7 @@ const ActivityForm = ({addActivity}) => {
 
     return (
         <form onSubmit={onSubmit}>
-            <h2>Add an activity</h2>
+            <h3>Add an activity:</h3>
             <div>
               <label htmlFor="title">Title:</label>
               <input onChange={onChange} type="text" id="title" />
