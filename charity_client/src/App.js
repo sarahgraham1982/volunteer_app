@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Activities from "./containers/Activities";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import HomePage from "./containers/HomePage";
+import { useState, useEffect } from "react";
 
-function App() {
+const App = () => {
+  const [allCharities, setAllCharities] = useState([]);
+  const [charity, setCharity] = useState(null);
+  useEffect(() => {
+    fetch("http://localhost:5000/api/charities/")
+      .then((res) => res.json())
+      .then((charities) => {
+        setAllCharities(charities)
+        setCharity(charities[0])
+      });
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <HomePage charity={charity} allCharities={allCharities} setCharity={setCharity} />
+      <Activities charity={charity} />
+      <Footer />
+    </>
   );
-}
+};
 
 export default App;
