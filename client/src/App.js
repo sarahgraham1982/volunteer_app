@@ -19,23 +19,23 @@ const App = () => {
   const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
-    if (submitted){
+    if (submitted) {
       setTimeout(() => {
         setSubmitted(false);
-      }, 5000)
-    } 
-  }, [submitted])
+      }, 5000);
+    }
+  }, [submitted]);
 
   useEffect(() => {
     fetch("http://localhost:5000/api/users/")
       .then((res) => res.json())
       .then((users) => {
-        setAllUsers(users)
-        setUser(users[0])
+        setAllUsers(users);
+        setUser(users[0]);
       });
   }, []);
 
-  function updateUser(user, data){
+  function updateUser(data) {
     fetch("http://localhost:5000/api/users/" + user._id, {
       method: "PUT",
       headers: {
@@ -46,23 +46,58 @@ const App = () => {
       .then((res) => res.json())
       .then((newUser) => {
         setUser(newUser);
-        setSubmitted(true)
+        setSubmitted(true);
       });
   }
 
-    return (
+  function redeemReward(reward) {
+    const newUser = { redeemedRewards:user.redeemedRewards };
+    newUser.redeemedRewards = newUser.redeemedRewards.map(
+      (reward) => reward._id
+    );
+    newUser.redeemedRewards.push(reward._id);
+    console.log(newUser);
+    updateUser(newUser);
+  }
+
+  return (
     <Router>
       <>
         <Header />
         <NavBar />
         <Switch>
-          <Route exact path="/" component={() => <HomePage user={user} allUsers={allUsers} setUser={setUser} />} />
-          <Route path="/rewards" component={Rewards} />
+          <Route
+            exact
+            path="/"
+            component={() => (
+              <HomePage user={user} allUsers={allUsers} setUser={setUser} />
+            )}
+          />
+          <Route
+            path="/rewards"
+            component={() => <Rewards redeemReward={redeemReward} user={user} />}
+          />
           <Route path="/activities" component={Activities} />
-          <Route path="/myaccount" component={() => <MyAccount user={user} />} />
-          <Route path="/myrewards" component={() => <MyRewards user={user} />} />
+          <Route
+            path="/myaccount"
+            component={() => <MyAccount user={user} />}
+          />
+          <Route
+            path="/myrewards"
+            component={() => <MyRewards user={user} />}
+          />
           <Route path="/myactivities" component={MyActivities} />
-          <Route path="/editprofile" component={() => <EditProfile user={user} updateUser={updateUser} submitted={submitted} setSubmitted={setSubmitted}/>} />
+          <Route
+            path="/editprofile"
+            component={() => (
+              <EditProfile
+                user={user}
+                updateUser={updateUser}
+                submitted={submitted}
+                setSubmitted={setSubmitted}
+              />
+            )}
+          />
           <Route component={ErrorPage} />
         </Switch>
       </>

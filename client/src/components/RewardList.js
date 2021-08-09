@@ -1,7 +1,7 @@
 import React from 'react';
 import RewardDetails from './RewardDetails';
 
-const RewardList = ({ rewards }) => {
+const RewardList = ({ rewards, redeemReward }) => {
 
 
   const rewardsList = rewards.map((reward) => {
@@ -9,6 +9,7 @@ const RewardList = ({ rewards }) => {
       <RewardDetails
         key={reward._id}
         reward={reward}
+        redeemReward={redeemReward}
       />
     )
   });

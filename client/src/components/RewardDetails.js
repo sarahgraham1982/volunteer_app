@@ -1,6 +1,6 @@
 import React from 'react';
 
-const RewardDetails = ({reward}) => {
+const RewardDetails = ({reward, redeemReward}) => {
 
   return (
     <div>
@@ -10,6 +10,7 @@ const RewardDetails = ({reward}) => {
       <p>{reward.points}</p>
       <p>{new Date(reward.expiryDate).toDateString()}</p>
       <p>{reward.category}</p>
+      {redeemReward && <button onClick={() => redeemReward(reward)}>Redeem This Reward</button>}
       <hr></hr>
     </div>
   )

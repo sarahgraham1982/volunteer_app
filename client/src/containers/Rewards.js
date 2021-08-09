@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import RewardList from '../components/RewardList';
 
-const Rewards = () => {
+const Rewards = ({redeemReward, user}) => {
 
   const url = "http://localhost:5000/api/rewards"
   const [rewards, setRewards] = useState([]);
@@ -25,8 +25,10 @@ const Rewards = () => {
 
     <>
       <h4>Get Rewards </h4>
+      <p><strong>Your Points:</strong> {user.noOfPoints}</p>
       <RewardList  
-      rewards = {rewards}/>
+      rewards = {rewards}
+      redeemReward={redeemReward}/>
     </>
   )
 };
