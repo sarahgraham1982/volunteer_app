@@ -12,6 +12,7 @@ import MyActivities from "./containers/MyActivities";
 import EditProfile from "./containers/EditProfile";
 import { useState } from "react";
 import { useEffect } from "react";
+import { userRedeemRewards } from "./helpers/helpers";
 
 const App = () => {
   const [allUsers, setAllUsers] = useState([]);
@@ -19,23 +20,23 @@ const App = () => {
   const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
-    if (submitted){
+    if (submitted) {
       setTimeout(() => {
         setSubmitted(false);
-      }, 5000)
-    } 
-  }, [submitted])
+      }, 5000);
+    }
+  }, [submitted]);
 
   useEffect(() => {
     fetch("http://localhost:5000/api/users/")
       .then((res) => res.json())
       .then((users) => {
-        setAllUsers(users)
-        setUser(users[0])
+        setAllUsers(users);
+        setUser(users[0]);
       });
   }, []);
 
-  function updateUser(user, data){
+  function updateUser(data) {
     fetch("http://localhost:5000/api/users/" + user._id, {
       method: "PUT",
       headers: {
@@ -46,23 +47,60 @@ const App = () => {
       .then((res) => res.json())
       .then((newUser) => {
         setUser(newUser);
-        setSubmitted(true)
+        setSubmitted(true);
       });
   }
 
-    return (
+  function redeemReward(reward, message) {
+    const newUser = userRedeemRewards(user, reward);
+    if (newUser === "insufficient funds")
+      message({ type: "error", message: "insufficient Funds" });
+    else {
+      updateUser(newUser);
+      message({ type: "success", message: "success" });
+    }
+  }
+
+  return (
     <Router>
       <>
         <Header />
         <NavBar />
         <Switch>
-          <Route exact path="/" component={() => <HomePage user={user} allUsers={allUsers} setUser={setUser} />} />
-          <Route path="/rewards" component={Rewards} />
+          <Route
+            exact
+            path="/"
+            component={() => (
+              <HomePage user={user} allUsers={allUsers} setUser={setUser} />
+            )}
+          />
+          <Route
+            path="/rewards"
+            component={() => (
+              <Rewards redeemReward={redeemReward} user={user} />
+            )}
+          />
           <Route path="/activities" component={Activities} />
-          <Route path="/myaccount" component={() => <MyAccount user={user} />} />
-          <Route path="/myrewards" component={() => <MyRewards user={user} />} />
+          <Route
+            path="/myaccount"
+            component={() => <MyAccount user={user} />}
+          />
+          <Route
+            path="/myrewards"
+            component={() => <MyRewards user={user} />}
+          />
           <Route path="/myactivities" component={MyActivities} />
-          <Route path="/editprofile" component={() => <EditProfile user={user} updateUser={updateUser} submitted={submitted} setSubmitted={setSubmitted}/>} />
+          <Route
+            path="/editprofile"
+            component={() => (
+              <EditProfile
+                user={user}
+                updateUser={updateUser}
+                submitted={submitted}
+                setSubmitted={setSubmitted}
+              />
+            )}
+          />
           <Route component={ErrorPage} />
         </Switch>
       </>

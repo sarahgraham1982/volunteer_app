@@ -1,35 +1,32 @@
-import React, { useEffect, useState } from 'react';
-import RewardList from '../components/RewardList';
+import React, { useEffect, useState } from "react";
+import RewardList from "../components/RewardList";
 
-const Rewards = () => {
-
-  const url = "http://localhost:5000/api/rewards"
+const Rewards = ({ redeemReward, user }) => {
+  const url = "http://localhost:5000/api/rewards";
   const [rewards, setRewards] = useState([]);
 
   useEffect(() => {
-    loadRewards(url)
-  }, [])
+    loadRewards(url);
+  }, []);
 
-  const loadRewards = url => {
+  const loadRewards = (url) => {
     fetch(url)
-      .then(res => res.json())
-      .then(rewardsList => { setRewards(rewardsList) })
-      .catch(err => console.error(err));
-  }
-
-  const handleSelectChange = event => {
-    loadRewards(event.target.value);
-  }
-
+      .then((res) => res.json())
+      .then((rewardsList) => {
+        setRewards(rewardsList);
+      })
+      .catch((err) => console.error(err));
+  };
+  if (!user) return "loading...";
   return (
-
     <>
       <h4>Get Rewards </h4>
-      <RewardList  
-      rewards = {rewards}/>
+      <p>
+        <strong>Your Points:</strong> {user.noOfPoints}
+      </p>
+      <RewardList rewards={rewards} redeemReward={redeemReward} user={user} />
     </>
-  )
+  );
 };
-
 
 export default Rewards;

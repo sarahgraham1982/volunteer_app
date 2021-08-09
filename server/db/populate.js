@@ -202,44 +202,44 @@ const rewardsUsersPromise = rewardsCollection
   .then((data) => {
     const [reward1, reward2, reward3] = data.ops;
 
-    const user1 = new User(
-      "Scott Kivlin ",
-      new Date(1991, 1, 4),
-      "I'm trying to help. ",
-      230,
-      [],
-      "email@example.com",
-      "07777777777"
-    );
-    const user2 = new User(
-      "Sarah Graham ",
-      new Date(1988, 3, 7),
-      "The points are so handy for nights in and out! ",
-      480,
-      [reward1._id],
-      "email@example.com",
-      "07777777777"
-    );
-    const user3 = new User(
-      "Sam  Hill",
-      new Date(1999, 10, 11),
-      "You know, I helped make this app. ",
-      460,
-      [reward2._id],
-      "email@example.com",
-      "07777777777"
-    );
-    const user4 = new User(
-      "Garry Hall ",
-      new Date(1993, 17, 3),
-      "You know, I also helped make this app. ",
-      450,
-      [reward2._id, reward3._id],
-      "email@example.com",
-      "07777777777"
-    );
-    return usersCollection.insertMany([user1, user2, user3, user4]);
-  });
+        const user1 = new User(
+          "Scott Russel George Kivlin ",
+          new Date(1991, 1, 4),
+          "I'm trying to help. ",
+          10000,
+          [],
+          "email@example.com",
+          "07777777777"
+        );
+        const user2 = new User(
+          "Sarah Victoria Graham ",
+          new Date(1988, 3, 7),
+          "The points are so handy for nights in and out! ",
+          480,
+          [reward1._id],
+          "email@example.com",
+          "07777777777"
+        );
+        const user3 = new User(
+          "Sam Hudson Hill",
+          new Date(1999, 10, 11),
+          "You know, I helped make this app. ",
+          460,
+          [reward2._id],
+          "email@example.com",
+          "07777777777"
+        );
+        const user4 = new User(
+          "Garry Hall ",
+          new Date(1993, 17, 3),
+          "You know, I also helped make this app. ",
+          450,
+          [reward2._id, reward3._id],
+          "email@example.com",
+          "07777777777"
+        );
+        return usersCollection.insertMany([user1, user2, user3, user4]);
+      });
 
 Promise.all([rewardsUsersPromise, charityPromise]).then((data) => {
   const [userData, charityData] = data
