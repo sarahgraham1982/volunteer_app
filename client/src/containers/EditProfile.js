@@ -9,14 +9,13 @@ const EditProfile = ({ user, updateUser, submitted, setSubmitted }) => {
     if (user) {
       setName(user.fullName);
       setDescription(user.aboutMe);
-      
     }
   }, [user]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const data = { fullName: name, aboutMe: description };
-    updateUser(user, data);
+    updateUser(data);
   };
   if (!user) return "loading...";
   return (
