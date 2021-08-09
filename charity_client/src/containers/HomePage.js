@@ -1,6 +1,5 @@
 import React from "react";
 import '../css/HomePage.css';
-import {Link} from 'react-router-dom'
 import UserMenu from "../components/UserMenu";
 
 const HomePage = ({charity, allCharities, setCharity}) => {
@@ -12,9 +11,6 @@ const HomePage = ({charity, allCharities, setCharity}) => {
           <p>call to action subtitle</p>
         </div>
 
-        <div className="button">
-          <Link to="/activities">View All Activities</Link>
-        </div> 
         <div>Change User:</div>
         <UserMenu currentCharity={charity} allCharities={allCharities} setCharity={setCharity}/>
       </div> 
