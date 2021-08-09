@@ -3,9 +3,11 @@ import React, { useEffect, useState } from 'react';
 import RewardDetails from '../components/RewardDetails';
 import RewardList from '../components/RewardList';
 
-const MyRewards = () => (
+const MyRewards = ({user}) => (
   <div>
     <h4>My Rewards!</h4>
+    <RewardList
+    rewards = {user.redeemedRewards}/>
   </div>
 );
 

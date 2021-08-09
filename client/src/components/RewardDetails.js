@@ -8,7 +8,7 @@ const RewardDetails = ({reward}) => {
       <p>{reward.company}</p>
       <p>{reward.description}</p>
       <p>{reward.points}</p>
-      <p>{reward.expiryDate}</p>
+      <p>{new Date(reward.expiryDate).toDateString()}</p>
       <p>{reward.category}</p>
       <hr></hr>
     </div>

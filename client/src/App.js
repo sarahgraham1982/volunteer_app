@@ -33,7 +33,7 @@ const App = () => {
           <Route path="/rewards" component={Rewards} />
           <Route path="/activities" component={Activities} />
           <Route path="/myaccount" component={() => <MyAccount user={user} />} />
-          <Route path="/myrewards" component={MyRewards} />
+          <Route path="/myrewards" component={() => <MyRewards user={user} />} />
           <Route path="/myactivities" component={MyActivities} />
           <Route component={ErrorPage} />
         </Switch>
