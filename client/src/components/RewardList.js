@@ -4,10 +4,10 @@ import RewardDetails from './RewardDetails';
 const RewardList = ({ rewards }) => {
 
 
-  const rewardsList = rewards.map((reward, index) => {
+  const rewardsList = rewards.map((reward) => {
     return (
       <RewardDetails
-        key={index}
+        key={reward._id}
         reward={reward}
       />
     )

@@ -24,11 +24,9 @@ const Rewards = () => {
   return (
 
     <>
-      <h4>Rewards! this is the rewards.js page nothing else </h4>
-      {rewards.map((reward) => {
-        console.log(reward)
-        return <p key={reward._id} value={reward._id} selected={reward._id}>{reward.name}</p>
-      })}
+      <h4>Get Rewards </h4>
+      <RewardList  
+      rewards = {rewards}/>
     </>
   )
 };
