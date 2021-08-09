@@ -1,28 +1,39 @@
 import React, { useEffect, useState } from 'react';
+
 const Rewards = ({ category }) => {
-  const [setRewards] = useState([]);
+
+  console.log(category)
+
+  const [rewards, setRewards] = useState([]);
   useEffect(() => {
-    loadRewards(category[2].url)
-  })
+    loadRewards(.url)
+  }, [])
+
   const loadRewards = url => {
     fetch(url)
       .then(res => res.json())
       .then(rewardsList => {
-        return setRewards(Rewards.feed.entry);
+        return setRewards(rewardsList);
       })
       .catch(err => console.error);
   }
+
   const handleSelectChange = event => {
     loadRewards(event.target.value);
   }
+
   return (
+
     <>
-      <h4>Rewards!</h4 >
-      < Rewards
-        handleSelectChange={handleSelectChange}
-        category={category}
-      />
+      <h4>Rewards!</h4>
+
+      {rewards.map((reward) => {
+        return <option key={reward._id} value={reward._id} selected={reward._id}>{reward.fullName}</option>;
+      })}
     </>
+
   )
 };
+
+
 export default Rewards;
