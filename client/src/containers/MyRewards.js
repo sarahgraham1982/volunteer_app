@@ -1,5 +1,6 @@
 import RewardList from "../components/RewardList";
 
+
 const MyRewards = ({ user }) => {
   if (!user) return "loading";
   return (
