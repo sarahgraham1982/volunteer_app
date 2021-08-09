@@ -4,6 +4,7 @@ import RewardList from "../components/RewardList";
 const Rewards = ({ redeemReward, user }) => {
   const url = "http://localhost:5000/api/rewards";
   const [rewards, setRewards] = useState([]);
+  const [category, setCategory] = useState("all")
 
   useEffect(() => {
     loadRewards(url);
@@ -21,10 +22,15 @@ const Rewards = ({ redeemReward, user }) => {
   return (
     <>
       <h4>Get Rewards </h4>
+      <div>Browse By Category...</div>
+      <button onClick={() => setCategory("all")}>All Categories</button>
+      <button onClick={() => setCategory("Food")}>Food</button>
+      <button onClick={() => setCategory("clothes")}>Clothing</button>
+      <button onClick={() => setCategory("Digital")}>Digital</button>
       <p>
         <strong>Your Points:</strong> {user.noOfPoints}
       </p>
-      <RewardList rewards={rewards} redeemReward={redeemReward} user={user} />
+      <RewardList rewards={rewards} redeemReward={redeemReward} user={user} category={category} />
     </>
   );
 };

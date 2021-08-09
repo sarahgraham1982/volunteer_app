@@ -1,9 +1,10 @@
 import React from 'react';
 import RewardDetails from './RewardDetails';
 
-const RewardList = ({ rewards, redeemReward, user }) => {
+const RewardList = ({ rewards, redeemReward, user, category }) => {
 
   const rewardsList = rewards.map((reward) => {
+    if ((category !== reward.category) && category !== "all") return null
     const redeemed = user.redeemedRewards.map((reward) => reward._id).includes(reward._id)
     return (
       <RewardDetails

@@ -46,7 +46,6 @@ MongoClient.connect("mongodb://localhost:27017", { useUnifiedTopology: true })
     rewards.push(
       new Reward(
         "codeclan",
-        "Get 100% off ",
         "100% Off next course codeclan sale",
         "use this voucher to get 100% off your next course at codeclan you must 18 years of age to redeem terms and conditions apply",
         5000,
