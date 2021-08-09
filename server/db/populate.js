@@ -29,28 +29,28 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
     ]);
 
     const reward1 = new Reward(
-      "steam",
-      "get 20% off next steam sale",
-      "terms and conditions",
+      "Steam",
+      "Get 20% off next steam sale",
+      "Terms and conditions",
       500,
       new Date(2022, 3, 14, 17, 30),
-      "digital"
+      "Digital"
     );
     const reward2 = new Reward(
-      "pizza hut",
+      "Pizza hut",
       "£10 off your next order",
-      "terms and conditions",
+      "Terms and conditions",
       500,
       new Date(2251, 0, 5, 10, 15),
-      "food"
+      "Food"
     );
     const reward3 = new Reward(
-      "costa",
+      "Costa",
       "BOGOF",
-      "terms and conditions",
+      "Terms and conditions",
       700,
       new Date(2023, 0, 13, 14, 40),
-      "coffee"
+      "Coffee"
     );
 
     const rewardsUsersPromise = rewardsCollection
@@ -61,7 +61,7 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
         const user1 = new User(
           "Scott Russel George Kivlin ",
           new Date(1991, 1, 4),
-          "I'm trying to help",
+          "I'm trying to help. ",
           230,
           [],
           "email@example.com",
@@ -70,7 +70,7 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
         const user2 = new User(
           "Sarah Victoria Graham ",
           new Date(1988, 3, 7),
-          "The points are so handy for nights in and out ",
+          "The points are so handy for nights in and out! ",
           480,
           [reward1._id],
           "email@example.com",
@@ -79,7 +79,7 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
         const user3 = new User(
           "Sam Hudson Hill",
           new Date(1999, 10, 11),
-          "You know, I helped make this app ",
+          "You know, I helped make this app. ",
           460,
           [reward2._id],
           "email@example.com",
@@ -88,7 +88,7 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
         const user4 = new User(
           "Garry Hall ",
           new Date(1993, 17, 3),
-          "You know, I also helped make this app ",
+          "You know, I also helped make this app. ",
           450,
           [reward2._id, reward3._id],
           "email@example.com",
@@ -106,7 +106,7 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
         "Clean up the park.",
         volunteerEdinburgh._id,
         "Hill walking and helping the community come together in this action-packed Saturday morning sesh. You'll get your very own light weight grab and grip litter picker upper, a garbage bag, and a high vis vest. We'll let you loose in the craggy environs of Holyrood Park to spend the morning as you please. Wander through the dramatic landscape of this ancient volcanic wonderland of lochs and cliffs, peaks and valleys. A Little slice of the highlands right here in Edinburgh. Scour the earth for cigarette butts and broken bottles, used tissue and doggy poo bags. Think of yourself as something of an archaeologist that deals with the modern world, if that helps. We'll have a weigh off at 15:00 to win prizes for the top three pickers who collected the most litter.",
-        "three hours",
+        "3 hours",
         {
           description: "Holyrood Park",
           coordinates: [55.946538, -3.159791],
@@ -135,7 +135,7 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
         "Help clean out our store rooms and maybe have a cup of tea.",
         bhf._id,
         "Our storage rooms are a dismal sight. With the pandemic we have been inundated with donations, but we have not been able to open the shop to sell anything. We're up to our necks in piles of clothing. A mound of unmarked bags are blocking the entrance to the garage. One of our employees may be trapped in there. Kitchenware is perched about the place in precarious cairns that reach to the ceiling. Now that we can finally open back up we need to sort things out fast. Come on down this Thursday to take a crack at it. We'll be sifting and sorting and shipping things off to our shops around the city. You might even get some good finds out of it. See a cool vintage jumper? Take it, it's yours.",
-        "two and a half hours",
+        "2.5 hours",
         {
           description: "136 Lothian Rd, Edinburgh",
           coordinates: [55.945229, -3.205543],

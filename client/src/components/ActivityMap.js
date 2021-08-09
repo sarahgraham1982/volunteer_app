@@ -1,5 +1,5 @@
 import React from 'react';
-import {MapContainer, TileLayer, Marker, Popup} from 'react-leaflet';
+import {MapContainer, Circle, TileLayer, Marker, Popup} from 'react-leaflet';
 
 const ActivityMap = ({activities}) => {
 
@@ -14,6 +14,7 @@ const ActivityMap = ({activities}) => {
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
+        <Circle center={[55.947762, -3.189037]} radius={2000} />
 
         {activities.map(
           activity => {
