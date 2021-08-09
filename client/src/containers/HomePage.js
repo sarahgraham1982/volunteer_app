@@ -8,11 +8,11 @@ const HomePage = ({user, allUsers, setUser}) => {
     <div className="welcome-container">
       <div className="top">
         <div className="welcome-text">
-          <h1>Welcome Message!</h1>
-          <p>call to action subtitle</p>
+          <h1>Giving back for Giving back.</h1>
+          <p>Get rewards for volunteering in your community</p>
         </div>
 
-        <div className="button">
+        <div className="button1">
           <a href ="/activities">View All Activities</a>
         </div> 
         <div>Change User:</div>
