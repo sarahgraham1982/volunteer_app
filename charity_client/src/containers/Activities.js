@@ -1,20 +1,20 @@
-import {useState, useEffect} from "react";
 import '../css/Activities.css'
 import ActivityList from "../components/ActivityList";
 import ActivityForm from "../components/ActivityForm";
+import { useState, useEffect } from 'react';
 import { getActivities } from "../services/ActivitiesService";
+
 
 const Activities = ({charity}) => {
 
   const [activities, setActivities] = useState([]);
 
   useEffect(() => {
-    if (charity){
-    getActivities().then((data)=>{
-      const charityActivities = data.filter(activity => activity.charity._id === charity._id)
+    getActivities().then((activities)=>{
+      const charityActivities = activities.filter(activity => activity.charity_id === charity._id)
       setActivities(charityActivities)
-    })}
-  }, [charity]);
+    })
+  }, []);
 
   const addActivity = (activity) => {
     const temp = activities.map(s => s);

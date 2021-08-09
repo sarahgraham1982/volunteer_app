@@ -5,10 +5,14 @@ const ActivityList = ({activities}) => {
 
   const activitiesList = activities.map((activity, index) => {
     return (
-      <ActivityDetails
-        key={index}
-        activity={activity}
-      />
+      <>
+        <h3>Your Activites:</h3>
+        <hr/>
+        <ActivityDetails
+          key={index}
+          activity={activity}
+        />
+      </>
     )
   });
 

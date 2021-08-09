@@ -4,7 +4,7 @@ const ActivityDetails = ({activity}) => {
 
   return (
     <div>
-      <h1>{activity.title}</h1>
+      <h4>{activity.title}</h4>
       <p>{activity.duration}</p>
       <p>{activity.location.description}</p>
       <p>{activity.description}</p>
