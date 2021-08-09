@@ -9,12 +9,23 @@ import ErrorPage from "./components/ErrorPage";
 import Header from "./components/Header";
 import MyRewards from "./containers/MyRewards";
 import MyActivities from "./containers/MyActivities";
+import EditProfile from "./containers/EditProfile";
 import { useState } from "react";
 import { useEffect } from "react";
 
 const App = () => {
   const [allUsers, setAllUsers] = useState([]);
   const [user, setUser] = useState(null);
+  const [submitted, setSubmitted] = useState(false);
+
+  useEffect(() => {
+    if (submitted){
+      setTimeout(() => {
+        setSubmitted(false);
+      }, 5000)
+    } 
+  }, [submitted])
+
   useEffect(() => {
     fetch("http://localhost:5000/api/users/")
       .then((res) => res.json())
@@ -23,6 +34,22 @@ const App = () => {
         setUser(users[0])
       });
   }, []);
+
+  function updateUser(user, data){
+    fetch("http://localhost:5000/api/users/" + user._id, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((newUser) => {
+        setUser(newUser);
+        setSubmitted(true)
+      });
+  }
+
     return (
     <Router>
       <>
@@ -35,6 +62,7 @@ const App = () => {
           <Route path="/myaccount" component={() => <MyAccount user={user} />} />
           <Route path="/myrewards" component={() => <MyRewards user={user} />} />
           <Route path="/myactivities" component={MyActivities} />
+          <Route path="/editprofile" component={() => <EditProfile user={user} updateUser={updateUser} submitted={submitted} setSubmitted={setSubmitted}/>} />
           <Route component={ErrorPage} />
         </Switch>
       </>
