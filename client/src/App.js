@@ -12,6 +12,7 @@ import MyActivities from "./containers/MyActivities";
 import EditProfile from "./containers/EditProfile";
 import { useState } from "react";
 import { useEffect } from "react";
+import { userRedeemRewards } from "./helpers/helpers";
 
 const App = () => {
   const [allUsers, setAllUsers] = useState([]);
@@ -50,14 +51,14 @@ const App = () => {
       });
   }
 
-  function redeemReward(reward) {
-    const newUser = { redeemedRewards:user.redeemedRewards };
-    newUser.redeemedRewards = newUser.redeemedRewards.map(
-      (reward) => reward._id
-    );
-    newUser.redeemedRewards.push(reward._id);
-    console.log(newUser);
-    updateUser(newUser);
+  function redeemReward(reward, message) {
+    const newUser = userRedeemRewards(user, reward);
+    if (newUser === "insufficient funds")
+      message({ type: "error", message: "insufficient Funds" });
+    else {
+      updateUser(newUser);
+      message({ type: "success", message: "success" });
+    }
   }
 
   return (
@@ -75,7 +76,9 @@ const App = () => {
           />
           <Route
             path="/rewards"
-            component={() => <Rewards redeemReward={redeemReward} user={user} />}
+            component={() => (
+              <Rewards redeemReward={redeemReward} user={user} />
+            )}
           />
           <Route path="/activities" component={Activities} />
           <Route
