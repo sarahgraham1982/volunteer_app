@@ -1,4 +1,4 @@
-//this will be a list of the rewards you have redeemed points for and a list of rewards you have used
+import RewardList from '../components/RewardList'
 
 const MyRewards = ({user}) => (
   <div>
