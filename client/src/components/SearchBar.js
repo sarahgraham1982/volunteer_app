@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SearchBar = ({filter, getActivitiesByPostcode, getActivitiesByCharity, resetActivities}) => {
+const SearchBar = ({filter, getActivitiesByPostcode, getActivitiesByCharity, resetActivities, charities}) => {
 
   const handleChange = (event) => {
     event.preventDefault()
@@ -25,13 +25,9 @@ const SearchBar = ({filter, getActivitiesByPostcode, getActivitiesByCharity, res
       <span>Search by Charity: </span>
       <select onChange={getActivitiesByCharity}>
         <option default value="" selected disabled>Select a Charity</option>
-        <option value="charity1'sid">charity1</option>
-        <option value="charity2'sid">charity2</option>
-        <option value="charity3'sid">charity3</option>
-        <option value="charity4'sid">charity4</option>
-        <option value="charity5'sid">charity5</option>
-        <option value="charity6'sid">charity6</option>
-        <option value="charity7'sid">charity7</option>
+        {charities.map((charity)=>{
+          return <option key={charity._id} value={charity._id}>{charity.name}</option>
+        })}
       </select>  
       <button onClick={reset}>Reset Search</button>
     </>
