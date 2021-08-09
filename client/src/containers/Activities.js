@@ -43,7 +43,7 @@ const Activities = () => {
   }
 
   const resetActivities = () => {
-    setActivities(activities);
+    setFilteredActivities(activities);
     setFilter('');
   }
 

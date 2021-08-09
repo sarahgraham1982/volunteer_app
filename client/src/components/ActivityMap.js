@@ -26,8 +26,10 @@ const ActivityMap = ({activities}) => {
               >
                 <Popup>
                   <h3>{activity.title}</h3>
+                  <h4>{activity.charity.name}</h4>
                   <p>{activity.duration}</p>
                   <p>{activity.location.description}</p>
+                  <button>Apply Now!</button>
                 </Popup>
               </Marker>
             )
