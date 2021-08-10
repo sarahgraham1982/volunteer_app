@@ -3,24 +3,27 @@ import '../css/ActivityForm.css';
 import { postActivity } from "../services/ActivitiesService";
 import Collapsible from "react-collapsible";
 
-const ActivityForm = ({addActivity}) => {
+const ActivityForm = ({addActivity, charity}) => {
     
     const [formData, setFormData] = useState({})
 
     const onChange = (e) =>{
-        formData[e.target.id] = e.target.value;
-        setFormData(formData);
+      formData[e.target.id] = e.target.value;
+      setFormData(formData);
     }
 
-    const onSubmit = (e) =>{
-        e.preventDefault();
-        postActivity(formData).then(()=>{
-            addActivity(formData);
-        })
+    const handleSubmit = (e) =>{
+      e.preventDefault();
+      const newActivity = {...formData}
+      newActivity.charity = charity._id
+      postActivity(formData).then(()=>{
+        addActivity(formData);
+      })
     }
 
     return (
-      <form onSubmit={onSubmit}>
+      <form onSubmit={handleSubmit}>
+        <button>
           <Collapsible trigger="Add an activity">
             <div>
               <label htmlFor="title">Title:</label>
@@ -28,7 +31,7 @@ const ActivityForm = ({addActivity}) => {
             </div>
             <div>
               <label htmlFor="description">Description:</label>
-              <input onChange={onChange} type="text" id="description" />
+              <textarea onChange={onChange} type="text" id="description" />
             </div>
             <div>
               <label htmlFor="duration">Duration:</label>
@@ -38,7 +41,7 @@ const ActivityForm = ({addActivity}) => {
               <label htmlFor="location">Location:</label>
               <input placeholder="address" onChange={onChange} type="text" id="location.description" />
               <input placeholder="coordinates" onChange={onChange} type="text" id="location.coordinates" />
-              <input placeholder="postcode" onCahnge={onChange} type="text" id="location.postcode" />
+              <input placeholder="postcode" onChange={onChange} type="text" id="location.postcode" />
             </div>
             <div>
               <label htmlFor="points">Points:</label>
@@ -51,6 +54,7 @@ const ActivityForm = ({addActivity}) => {
 
             <input type="submit" value="Save" id="save"/>
           </Collapsible>
+        </button>
 	    </form>
 
     );

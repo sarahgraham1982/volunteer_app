@@ -11,7 +11,6 @@ const Activities = () => {
   const [activities, setActivities] = useState([]);
   const [filteredActivities, setFilteredActivities] = useState([]);
   const [charities, setCharities] = useState([]);
-  const [filter, setFilter] = useState('');
   const [listView, setListView] = useState(true);
 
   useEffect(() => {
@@ -32,19 +31,8 @@ const Activities = () => {
     setFilteredActivities(activitiesByCharity);
   }
 
-  const getActivitiesByPostcode = (filter) => {
-    const filteredActivities = activities.filter(activity => {
-      return (
-        activity.postcode.includes(filter)
-      )
-    })
-    setFilter(filter);
-    setActivities(filteredActivities);
-  }
-
   const resetActivities = () => {
     setFilteredActivities(activities);
-    setFilter('');
   }
 
   const handleChange = () => {
@@ -60,12 +48,13 @@ const Activities = () => {
       <SearchBar
         charities={charities}
         getActivitiesByCharity={getActivitiesByCharity}
-        filter={filter}
-        getActivitiesByPostcode={getActivitiesByPostcode}
         resetActivities={resetActivities}
       />
       <p><button onClick={handleChange}>{listView ? "Map View" : "List View"}</button></p>
-      {listView ? <ActivityList activities={filteredActivities}/> : <ActivityMap activities={filteredActivities}/> }
+      {listView ? <ActivityList activities={filteredActivities}/> : 
+        <ActivityMap 
+          activities={filteredActivities} 
+        /> }
     </>
   );
 }

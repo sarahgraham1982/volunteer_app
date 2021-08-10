@@ -7,7 +7,7 @@ const ActivityMap = ({activities}) => {
     <div>
       <MapContainer
         center={[55.947762, -3.189037]}
-        zoom={12}
+        zoom={13}
         scrollWheelZoom={false}
       >
         <TileLayer
