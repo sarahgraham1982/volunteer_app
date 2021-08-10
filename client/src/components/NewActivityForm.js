@@ -1,5 +1,5 @@
 import {useState} from "react";
-import { postNewActivity } from "./ActivitiesService";
+import { postActivity } from "./ActivitiesService";
 
 const NewActivityForm = ({addActivity}) => {
     
