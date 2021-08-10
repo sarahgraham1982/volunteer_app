@@ -6,7 +6,16 @@ const NavBar = () => {
 
   return (
     <div className="NavBar" id="MyNavBar">
-        <ul>
+      <div class="NavBar" id="myNavBar">
+    <a href="/" class="active">Home</a>
+    <a href="/activities">Give Your Time</a>
+    <a href="/rewards">Get Rewards</a>
+    <a href="/myaccount">My Account</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+  </a>
+</div>
+        {/* <ul>
           <li>
             <Link to="/">Home</Link>
           </li>
@@ -19,32 +28,20 @@ const NavBar = () => {
           <li>
             <Link to="/myaccount">My Account</Link>
           </li>
-        </ul>
+        </ul> */}
     </div> 
   
   );
 
-//   <div class="NavBar" id="myNavBar">
-//     <a href="#home" class="active">Home</a>
-//     <a href="#news">News</a>
-//     <a href="#contact">Contact</a>
-//     <a href="#about">About</a>
-//     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-//       <i class="fa fa-bars"></i>
-//   </a>
-// </div>
 
-
-// function myFunction() {
-//   var x = document.getElementById("myNavBar");
-//   if (x.className === "NavBar") {
-//     x.className += " responsive";
-//   } else {
-//     x.className = "NavBar";
-//   }
-// }
-
-
+function myFunction() {
+  var x = document.getElementById("myNavBar");
+  if (x.className === "NavBar") {
+    x.className += " responsive";
+  } else {
+    x.className = "NavBar";
+  }
+}
 
 }
 

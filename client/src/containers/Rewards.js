@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import RewardList from "../components/RewardList";
+import '../css/Rewards.css';
+
 
 const Rewards = ({ redeemReward, user }) => {
   const url = "http://localhost:5000/api/rewards";
@@ -21,6 +23,7 @@ const Rewards = ({ redeemReward, user }) => {
   if (!user) return "loading...";
   return (
     <>
+
       <h4>Get Rewards </h4>
       <div>Browse By Category...</div>
       <button onClick={() => setCategory("all")}>All Categories</button>
@@ -31,6 +34,7 @@ const Rewards = ({ redeemReward, user }) => {
         <strong>Your Points:</strong> {user.noOfPoints}
       </p>
       <RewardList rewards={rewards} redeemReward={redeemReward} user={user} category={category} />
+
     </>
   );
 };

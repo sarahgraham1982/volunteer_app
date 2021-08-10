@@ -1,4 +1,8 @@
+import React from 'react';
+import '../css/RewardDetails.css';
+
 import { useState } from "react";
+
 
 const RewardDetails = ({ reward, redeemReward, redeemed }) => {
   const [message, setMessage] = useState(null);
@@ -18,7 +22,7 @@ const RewardDetails = ({ reward, redeemReward, redeemed }) => {
 
   return (
     <div>
-      <h1>{reward.title}</h1>
+      <h2>{reward.title}</h2>
       <p>{reward.company}</p>
       <p>{reward.description}</p>
       <p>{reward.points}</p>
