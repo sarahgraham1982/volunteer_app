@@ -20,7 +20,6 @@ const ActivityList = ({activities}) => {
     <div>
       <h3>Your Activities:</h3>
       {activitiesList}
-      <button>Create New Activity</button>
     </div>
   );
 }

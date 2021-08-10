@@ -1,13 +1,11 @@
-.reward-detail {
+.activity-detail {
     background-color: rgb(216, 216, 216);
     padding: 20px;
-    border: 5px solid rgb(0, 0, 0);
-    border-style: dashed;
-    margin: 10px;
-    text-align: center;
+    
 }
-.reward-detail button {
-    background-color: #F60A8F;
+
+.activity-detail button {
+    background-color: #86c55d;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -15,5 +13,6 @@
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-}
+    
 
+}

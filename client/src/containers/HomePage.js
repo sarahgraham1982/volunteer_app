@@ -10,10 +10,15 @@ const HomePage = ({user, allUsers, setUser}) => {
 
     <div className="welcome-container">
       <div className="top">
-        <div className="welcome-text">
+        {/* <div className="welcome-text">
+          
           <h2>A Thank You for Giving Back.</h2>
           <p>Get rewards for volunteering in your community</p>
-        </div>
+        </div> */}
+
+        <div className="button1">
+          <a href ="/myaccount">Get Involved >></a>
+        </div> 
 
         <div className="middle">
         <div className="welcome-image">
@@ -21,14 +26,20 @@ const HomePage = ({user, allUsers, setUser}) => {
         </div> 
       </div>  
 
-        <div className="button1">
-          <a href ="/activities">View All Volunteering Activities</a>
+        <div className="button2">
+          <a href ="/activities">View All Activities >></a>
         </div> 
-        <div className="change-user"></div>
+        <div className="button3">
+          <a href ="/rewards">View All Rewards >></a>
+        </div>
+      <div className="change-user"></div>
           <div>Change User:</div>
+          <div className="change-user-content"></div>
           <UserMenu currentUser={user} allUsers={allUsers} setUser={setUser}/>
-        </div>           
+      </div>           
     </div>
+
+    
     );
   };
  
