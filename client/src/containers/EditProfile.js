@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-const EditProfile = ({ user, updateUser, submitted, setSubmitted }) => {
+const EditProfile = ({ user, updateUser, submitted }) => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
 
