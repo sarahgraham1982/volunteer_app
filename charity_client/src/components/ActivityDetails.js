@@ -8,8 +8,7 @@ const ActivityDetails = ({activity}) => {
       <p>{activity.duration}</p>
       <p>{activity.location.description}</p>
       <p>{activity.description}</p>
-      <p>{activity.applications}</p>
-      <hr></hr>
+      {/* <p>{activity.applications}</p> IT DOESN"T LIKE THIS OBJECT */}
     </div>
   )
 }

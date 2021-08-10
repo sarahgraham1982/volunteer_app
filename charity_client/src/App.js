@@ -19,7 +19,7 @@ const App = () => {
   }, []);
 
   const handleChange = event => {
-    const selectedCharity = allCharities.find(charity => charity._.id === event.target.value)
+    const selectedCharity = allCharities.find(charity => charity._id === event.target.value)
     setCharity(selectedCharity);
   }
 

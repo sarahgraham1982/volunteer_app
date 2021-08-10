@@ -1,6 +1,7 @@
 import { useState } from "react";
 import '../css/ActivityForm.css';
 import { postActivity } from "../services/ActivitiesService";
+import Collapsible from "react-collapsible";
 
 const ActivityForm = ({addActivity}) => {
     
@@ -19,11 +20,15 @@ const ActivityForm = ({addActivity}) => {
     }
 
     return (
-        <form onSubmit={onSubmit}>
-            <h3>Add an activity:</h3>
+      <form onSubmit={onSubmit}>
+          <Collapsible trigger="Add an activity">
             <div>
               <label htmlFor="title">Title:</label>
               <input onChange={onChange} type="text" id="title" />
+            </div>
+            <div>
+              <label htmlFor="description">Description:</label>
+              <input onChange={onChange} type="text" id="description" />
             </div>
             <div>
               <label htmlFor="duration">Duration:</label>
@@ -31,7 +36,9 @@ const ActivityForm = ({addActivity}) => {
             </div>
             <div>
               <label htmlFor="location">Location:</label>
-              <input onChange={onChange} type="text" id="location" />
+              <input placeholder="address" onChange={onChange} type="text" id="location.description" />
+              <input placeholder="coordinates" onChange={onChange} type="text" id="location.coordinates" />
+              <input placeholder="postcode" onCahnge={onChange} type="text" id="location.postcode" />
             </div>
             <div>
               <label htmlFor="points">Points:</label>
@@ -39,10 +46,11 @@ const ActivityForm = ({addActivity}) => {
             </div>
             <div>
               <label htmlFor="date">Date:</label>
-              <input onChange={onChange} type="text" id="date" />
+              <input onChange={onChange} type="date" id="datetime" />
             </div>
 
             <input type="submit" value="Save" id="save"/>
+          </Collapsible>
 	    </form>
 
     );

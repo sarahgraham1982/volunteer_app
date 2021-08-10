@@ -3,21 +3,22 @@ import ActivityDetails from './ActivityDetails';
 
 const ActivityList = ({activities}) => {
 
+  console.log(activities)
   const activitiesList = activities.map((activity, index) => {
-    return (
+      return (
       <>
-        <h3>Your Activites:</h3>
         <hr/>
         <ActivityDetails
           key={index}
           activity={activity}
         />
       </>
-    )
+      )
   });
 
   return (
     <div>
+      <h3>Your Activities:</h3>
       {activitiesList}
       <button>Create New Activity</button>
     </div>
