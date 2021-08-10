@@ -10,11 +10,17 @@ const Activities = ({charity}) => {
   const [activities, setActivities] = useState([]);
 
   useEffect(() => {
+    if(charity){
     getActivities().then((activities)=>{
-      const charityActivities = activities.filter(activity => activity.charity_id === charity._id)
+      const charityActivities = activities.filter(activity => activity.charity._id === charity._id)
+      console.log(charityActivities)
       setActivities(charityActivities)
-    })
-  }, []);
+    })}
+  }, [charity]);
+
+  if(!charity){
+    return null
+  }
 
   const addActivity = (activity) => {
     const temp = activities.map(s => s);
