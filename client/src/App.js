@@ -5,6 +5,7 @@ import Rewards from "./containers/Rewards";
 import Activities from "./containers/Activities";
 import MyAccount from "./containers/MyAccount";
 import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
 import ErrorPage from "./components/ErrorPage";
 import Header from "./components/Header";
 import MyRewards from "./containers/MyRewards";
@@ -37,6 +38,7 @@ const App = () => {
           <Route path="/myactivities" component={MyActivities} />
           <Route component={ErrorPage} />
         </Switch>
+        <Footer />
       </>
     </Router>
   );

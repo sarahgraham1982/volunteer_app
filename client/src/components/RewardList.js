@@ -1,11 +1,13 @@
 import React from 'react';
 import RewardDetails from './RewardDetails';
+import '../css/RewardsList.css';
 
 const RewardList = ({ rewards }) => {
 
 
   const rewardsList = rewards.map((reward) => {
     return (
+      
       <RewardDetails
         key={reward._id}
         reward={reward}

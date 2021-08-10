@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import RewardList from '../components/RewardList';
+import '../css/Rewards.css';
 
 const Rewards = () => {
 
@@ -24,7 +25,7 @@ const Rewards = () => {
   return (
 
     <>
-      <h4>Get Rewards </h4>
+      <h1>Get Rewards </h1>
       <RewardList  
       rewards = {rewards}/>
     </>
