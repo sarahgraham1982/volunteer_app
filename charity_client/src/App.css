@@ -36,3 +36,7 @@
     transform: rotate(360deg);
   }
 }
+
+.Collapsible {
+  background-color: rgb(93, 180, 93);
+}

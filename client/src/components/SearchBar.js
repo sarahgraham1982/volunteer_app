@@ -1,11 +1,6 @@
 import React from 'react';
 
-const SearchBar = ({filter, getActivitiesByPostcode, getActivitiesByCharity, resetActivities, charities}) => {
-
-  const handleChange = (event) => {
-    event.preventDefault()
-    getActivitiesByPostcode(event.target.value)
-  }
+const SearchBar = ({getActivitiesByCharity, resetActivities, charities}) => {
 
   const reset = (event) => {
     event.preventDefault()
@@ -14,15 +9,7 @@ const SearchBar = ({filter, getActivitiesByPostcode, getActivitiesByCharity, res
 
   return (
     <>
-      <p>Search by postcode:
-        <input 
-          id="filter" 
-          name="filter" 
-          type="text"
-          value={filter}
-          onChange={handleChange}/>
-      </p>
-      <span>Search by Charity: </span>
+      <p>Search by charity: </p>
       <select onChange={getActivitiesByCharity}>
         <option default value="" selected disabled>Select a Charity</option>
         {charities.map((charity)=>{

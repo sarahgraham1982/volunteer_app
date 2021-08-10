@@ -1,13 +1,14 @@
 import React from 'react';
 import {MapContainer, Circle, TileLayer, Marker, Popup} from 'react-leaflet';
+import { haveIApplied } from '../helpers/helpers';
 
-const ActivityMap = ({activities}) => {
+const ActivityMap = ({activities, apply, user}) => {
 
   return (
     <div>
       <MapContainer
         center={[55.947762, -3.189037]}
-        zoom={12}
+        zoom={13}
         scrollWheelZoom={false}
       >
         <TileLayer
@@ -18,6 +19,7 @@ const ActivityMap = ({activities}) => {
 
         {activities.map(
           activity => {
+            const applied = haveIApplied(activity, user)
             return (
               <Marker
                 key={activity.id}
@@ -29,7 +31,7 @@ const ActivityMap = ({activities}) => {
                   <h4>{activity.charity.name}</h4>
                   <p>{activity.duration}</p>
                   <p>{activity.location.description}</p>
-                  <button>Apply Now!</button>
+                  {applied ? <div>APPLIED</div> : <button onClick={() => apply(activity)}>Apply Now!</button>}
                 </Popup>
               </Marker>
             )

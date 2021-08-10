@@ -2,8 +2,9 @@ import React from 'react';
 import Collapsible from 'react-collapsible';
 import '../css/ActivityDetails.css';
 
-const ActivityDetails = ({activity}) => {
 
+
+const ActivityDetails = ({ activity, apply, applied }) => {
   return (
     <div className="activity-detail">
       <h1>{activity.title}</h1>
@@ -12,11 +13,15 @@ const ActivityDetails = ({activity}) => {
       <p>Location: {activity.location.description}</p>
       <Collapsible trigger="More Details >>">
         <p>{activity.description}</p>
-        <button>Apply Now!</button>
+        {applied ? (
+          <div>APPLIED</div>
+        ) : (
+          <button onClick={() => apply(activity)}>Apply Now!</button>
+        )}
       </Collapsible>
       <hr></hr>
     </div>
-  )
-}
+  );
+};
 
 export default ActivityDetails;

@@ -28,7 +28,7 @@ const MyAccount = ({ user }) => {
       <Link to="/editprofile">Edit Profile</Link>
       <h3>My Activities</h3>
       {activities.map((activity) => {
-        return <ActivityDetails key={activity._id} activity={activity} />;
+        return <ActivityDetails applied={true} key={activity._id} activity={activity} />;
       })}
       <div>
         <Link to="/myrewards">My Rewards</Link>
