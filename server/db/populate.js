@@ -253,7 +253,7 @@ MongoClient.connect("mongodb://localhost:27017", { useUnifiedTopology: true })
           "Scott Kivlin ",
           new Date(1991, 1, 4),
           "I'm trying to help. ",
-          230,
+          10000,
           [],
           "email@example.com",
           "07777777777"
