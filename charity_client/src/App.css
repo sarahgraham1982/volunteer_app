@@ -39,4 +39,11 @@
 
 .Collapsible {
   background-color: rgb(93, 180, 93);
+  border: solid 1px black;
+  padding: 5px;
+}
+
+.Collapsible__trigger{
+  cursor:pointer;
+  font-weight: bold;
 }

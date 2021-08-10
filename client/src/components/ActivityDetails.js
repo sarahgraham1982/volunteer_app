@@ -14,7 +14,7 @@ const ActivityDetails = ({ activity, apply, applied }) => {
       <h4>Charity: {activity.charity.name}</h4>
       <p>Duration: {activity.duration}</p>
       <p>Location: {activity.location.description}</p>
-      <Collapsible trigger="More Details>>">
+      <Collapsible trigger="More Details">
         <p>{activity.description}</p>
         {applied ? (
           <div>APPLIED</div>
