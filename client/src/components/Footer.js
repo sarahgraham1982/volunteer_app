@@ -3,8 +3,8 @@ import '../css/Footer.css';
 
 const Footer = () => {
   return (
-    <div id="Footer">
-      All content © GSSS 2021
+    <div className="footer">
+      <h5>All content © GSSS 2021</h5>
     </div>
   )
 }
