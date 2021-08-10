@@ -6,7 +6,7 @@ const MyRewards = ({ user }) => {
   return (
     <div>
       <h4>My Rewards!</h4>
-      <RewardList rewards={user.redeemedRewards} user={user}/>
+      <RewardList rewards={user.redeemedRewards} user={user} category={"all"}/>
     </div>
   );
 };
