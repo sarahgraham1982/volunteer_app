@@ -20,4 +20,11 @@ function userRedeemRewards(user, reward ) {
       return newUser
 }
 
-export {ageFromDOB, userRedeemRewards};
+function haveIApplied(activity, user){
+  const applicants = activity.applications.map(
+    (application) => application.user._id
+  );
+  return applicants.includes(user._id);
+}
+
+export {ageFromDOB, userRedeemRewards, haveIApplied};

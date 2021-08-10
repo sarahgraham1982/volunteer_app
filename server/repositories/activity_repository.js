@@ -62,7 +62,6 @@ function update(
   return activityCollection
     .updateOne({ _id: ObjectID(id) }, { $set: updateData })
     .then((data) => {
-      console.log(data);
       return getOne(
         activityCollection,
         userCollection,
