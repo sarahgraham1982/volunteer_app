@@ -46,7 +46,8 @@ function save(activityCollection, activity) {
     activity.description,
     activity.duration,
     activity.location,
-    activity.points
+    activity.points,
+    activity.datetime
   );
   return repository.save(activityCollection, newActivity);
 }

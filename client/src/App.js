@@ -14,6 +14,7 @@ import EditProfile from "./containers/EditProfile";
 import { useState } from "react";
 import { useEffect } from "react";
 import { userRedeemRewards } from "./helpers/helpers";
+import { getUsers, updateUser } from "./services/UserService";
 
 const App = () => {
   const [allUsers, setAllUsers] = useState([]);
@@ -29,23 +30,15 @@ const App = () => {
   }, [submitted]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/users/")
-      .then((res) => res.json())
+    getUsers()
       .then((users) => {
         setAllUsers(users);
         setUser(users[0]);
       });
   }, []);
 
-  function updateUser(data) {
-    fetch("http://localhost:5000/api/users/" + user._id, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    })
-      .then((res) => res.json())
+  function handleUpdateUser(data) {
+    updateUser(user._id, data)
       .then((newUser) => {
         setUser(newUser);
         setSubmitted(true);
@@ -57,7 +50,7 @@ const App = () => {
     if (newUser === "insufficient funds")
       message({ type: "error", message: "insufficient Funds" });
     else {
-      updateUser(newUser);
+      handleUpdateUser(newUser);
       message({ type: "success", message: "success" });
     }
   }
@@ -99,9 +92,8 @@ const App = () => {
             component={() => (
               <EditProfile
                 user={user}
-                updateUser={updateUser}
+                updateUser={handleUpdateUser}
                 submitted={submitted}
-                setSubmitted={setSubmitted}
               />
             )}
           />
