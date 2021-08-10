@@ -104,7 +104,7 @@ const App = () => {
           />
           <Route component={ErrorPage} />
         </Switch>
-        <Footer />
+        
       </>
     </Router>
   );

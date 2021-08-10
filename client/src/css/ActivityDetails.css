@@ -1,11 +1,11 @@
-.reward-detail {
+.activity-detail {
     background-color: rgb(216, 216, 216);
     padding: 20px;
     
 }
 
-.reward-detail button {
-    background-color: #f60a8f;
+.activity-detail button {
+    background-color: #86c55d;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -16,4 +16,3 @@
     
 
 }
-
