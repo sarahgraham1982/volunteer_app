@@ -198,7 +198,7 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
     );
 
     const rewardsUsersPromise = rewardsCollection
-      .insertMany([reward1, reward2, reward3])
+      .insertMany([reward1, reward2, reward3, reward4, reward5, reward6, reward7, reward8, reward9, reward10, reward11, reward12, reward13, reward14, reward15, reward16, reward17, reward18, reward19, reward20, reward21])
       .then((data) => {
         const [reward1, reward2, reward3] = data.ops;
 
