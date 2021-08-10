@@ -81,7 +81,10 @@ const App = () => {
               <Rewards redeemReward={redeemReward} user={user} />
             )}
           />
-          <Route path="/activities" component={Activities} />
+          <Route
+            path="/activities"
+            component={() => <Activities user={user} />}
+          />
           <Route
             path="/myaccount"
             component={() => <MyAccount user={user} />}
