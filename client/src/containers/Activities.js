@@ -69,9 +69,9 @@ const Activities = ({ user }) => {
       />
       <p>
         <div className="map-button">
-        <button onClick={handleChange}>
-          {listView ? "Map View" : "List View"}
-        </button>
+          <button onClick={handleChange}>
+            {listView ? "Map View" : "List View"}
+          </button>
         </div>
       </p>
       {listView ? (

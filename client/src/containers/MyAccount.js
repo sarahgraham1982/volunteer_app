@@ -24,18 +24,21 @@ const MyAccount = ({ user }) => {
         setActivities(myActivityies);
       });
   }, [user]);
+
   return (
     <>
       <div className="my-profile-heading">
-      <h3>My Profile</h3></div>
+        <h3>My Profile</h3>
+      </div>
       <Profile user={user} />
       <div className="edit-button">
-      <Link to="/editprofile">Edit Profile</Link>
+        <Link to="/editprofile">Edit Profile</Link>
       </div>
       <div className="my-profile-heading">
-      <h3>My Activities</h3></div>
+        <h3>My Activities</h3>
+      </div>
       <div className="my-activity-map">
-      {activities.map((activity) => {
+        {activities.map((activity) => {
 
         return (
           <ActivityDetails
