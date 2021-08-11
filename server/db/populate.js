@@ -301,7 +301,217 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
         230,
         new Date(2021, 10, 3, 16),
       );
-      return activitiesCollection.insertMany([activity1, activity2, activity3, activity4])
+      const activity5 = new Activity(
+        "help us feed the homeless",
+        GrassmarketCommunityProject._id,
+        " The Grassmarket Community Project supports Edinburgh’s most vulnerable people whilst providing the highest quality customer service.",
+        "3 hours",
+        {
+          description: "86 Candlemaker Row, Edinburgh",
+          coordinates: [55.950903, -3.185356],
+          postcode: "EH12QA"
+        },
+        340,
+        new Date(2021, 10, 3, 16),
+      );
+      const activity6 = new Activity(
+        "help us cook for the homeless",
+        GrassmarketCommunityProject._id,
+        " The Grassmarket Community Project supports Edinburgh’s most vulnerable people whilst providing the highest quality customer service.",
+        "3 hours",
+        {
+          description: "86 Candlemaker Row, Edinburgh",
+          coordinates: [55.950903, -3.185356],
+          postcode: "EH12QA"
+        },
+        550,
+        new Date(2021, 10, 3, 16),
+      );
+      const activity7 = new Activity(
+        "help us by taking some calls",
+        Children1st._id,
+        " Children 1st is Scotland’s National Children’s Charity. We help Scotland’s families to put children first, with practical advice and with support in difficult times. And when the worst happens, we support survivors of abuse, neglect, and other traumatic events in childhood, to recover",
+        "3 hours",
+        {
+          description: "83 Whitehouse Loan, Edinburgh",
+          coordinates: [55.950903, -3.185356],
+          postcode: "EH91AT"
+        },
+        230,
+        new Date(2021, 10, 3, 16),
+      );
+      const activity8 = new Activity(
+        "help us by planing a fun filled day",
+        Children1st._id,
+        " Children 1st is Scotland’s National Children’s Charity. We help Scotland’s families to put children first, with practical advice and with support in difficult times. And when the worst happens, we support survivors of abuse, neglect, and other traumatic events in childhood, to recover",
+        "3 hours",
+        {
+          description: "83 Whitehouse Loan, Edinburgh",
+          coordinates: [55.950903, -3.185356],
+          postcode: "EH91AT"
+        },
+        550,
+        new Date(2021, 10, 3, 16),
+      );
+      const activity9 = new Activity(
+        "help us plant some trees",
+        GreenTeam._id,
+        " The Green Team has been successfully running programmes of outdoor activities for young people since 1995.",
+        "5 hours",
+        {
+          description: "2 McLeod St, Edinburgh",
+          coordinates: [55.950903, -3.185356],
+          postcode: "EH112ND"
+        },
+        535,
+        new Date(2021, 10, 3, 16),
+      );
+      const activity10 = new Activity(
+        "dress up (for the kids)",
+        CCLASP._id,
+        " We help children and teenagers suffering from cancer or leukaemia in Scotland. We also help diagnosed families and bereaved families. ",
+        "an afternoon",
+        {
+          description: " 4 Upper Craigour, Edinburgh",
+          coordinates: [55.950903, -3.185356],
+          postcode: "EH177SF"
+        },
+        600,
+        new Date(2021, 10, 3, 16),
+      );
+      const activity11 = new Activity(
+        "run a stall at one of our bake sales",
+        TheActionGroup._id,
+        " The Action Group is about 'no barriers – for all of life.' · We could use lots of fancy words to sum us up, but really it comes down to you, ",
+        "an afternoon",
+        {
+          description: " Norton Park Centre, 57 Albion Rd, Edinburgh ",
+          coordinates: [55.950903, -3.185356],
+          postcode: "EH75QY"
+        },
+        220,
+        new Date(2021, 10, 3, 16),
+      );
+      const activity12 = new Activity(
+        "donate some toys ",
+        HopscotchchildrenCharity._id,
+        " HopScotch is a children's charity in Edinburgh providing respite breaks for disadvantaged children living in Scotland",
+        "an afternoon",
+        {
+          description: " Norton Park Centre, 57 Albion Rd, Edinburgh ",
+          coordinates: [55.950903, -3.185356],
+          postcode: "EH75QY"
+        },
+        180,
+        new Date(2021, 10, 3, 16),
+      );
+      const activity13 = new Activity(
+        "help us run th disco",
+        Enable._id,
+        "We provide a wide range of support services for people who have a learning disability in Edinburgh. Edinburgh office: Birch House Bankhead Crossway South",
+        "late evening",
+        {
+          description: " 95 Causewayside, Newington, Edinburgh ",
+          coordinates: [55.950903, -3.185356],
+          postcode: "EH91QG"
+        },
+        200,
+        new Date(2021, 10, 3, 16),
+      );
+      const activity14 = new Activity(
+        "donate anything clothes  ",
+        Streetwork._id,
+        "We provide a range of homelessness services and support in Edinburgh. Our Streetwork service has been operating in Edinburgh for 25+ years.",
+        "late evening",
+        {
+          description: " 22 Holyrood Rd, Edinburgh",
+          coordinates: [55.950903, -3.185356],
+          postcode: "EH88AF"
+        },
+        80,
+        new Date(2021, 10, 3, 16),
+      );
+      const activity15 = new Activity(
+        "take some calls and give advice  ",
+        AlzheimerScotland - NationalOffice._id,
+        "The office aims to support people with dementia, their families, relatives and friends at any stage of the illness.",
+        "3 hours",
+        {
+          description: " 160 Dundee St, Edinburgh",
+          coordinates: [55.950903, -3.185356],
+          postcode: "EH111DQ"
+        },
+        120,
+        new Date(2021, 10, 3, 16),
+      );
+      const activity16 = new Activity(
+        "help some move in",
+        FreshStart._id,
+        "Fresh Start is an Edinburgh based charity helping people who have been homeless get established in their new home.",
+        "as long as it takes",
+        {
+          description: "22-24 Ferry Rd Dr, Edinburgh ",
+          coordinates: [55.950903, -3.185356],
+          postcode: "EEH44BR"
+        },
+        300,
+        new Date(2021, 10, 3, 16),
+      );
+      const activity17 = new Activity(
+        "let's clean up the beach",
+        FriendsOfTheEarthScotland._id,
+        "Scotland's leading environmental campaigning organisation, working for environmental & climate justice and campaigning for the planet and its people.",
+        "2 hours",
+        {
+          description: "Thorn House, 5 Rose St, Edinburgh ",
+          coordinates: [55.950903, -3.185356],
+          postcode: "EH22PR"
+        },
+        100,
+        new Date(2021, 10, 3, 16),
+      );
+      const activity18 = new Activity(
+        "help by getting the shopping in ",
+        AgeScotland._id,
+        "Age Scotland is the leading charity representing older people in Scotland and supporting their rights and interests. We want everyone to love later life.",
+        "2 hours",
+        {
+          description: "160 Causewayside, Edinburgh",
+          coordinates: [55.950903, -3.185356],
+          postcode: "EH9 1PR"
+        },
+        180,
+        new Date(2021, 10, 3, 16),
+      );
+      const activity19 = new Activity(
+        "help by donating old baby things",
+        PregnancyCounselling&Care._id,
+        "Pregnancy Counselling & Care (Scotland) has been supporting families in Edinburgh and the Lothians for over 40 years",
+        "2 hours",
+        {
+          description: "24A Haddington Pl, Edinburgh",
+          coordinates: [55.950903, -3.185356],
+          postcode: "EH74AF"
+        },
+        150,
+        new Date(2021, 10, 3, 16),
+      );
+      const activity20 = new Activity(
+        "help out our shop",
+        PregnancyCounselling&Care._id,
+        "The Cancer Research UK Edinburgh Centre brings together cancer scientists and clinicians from across the University of Edinburgh",
+        "2 hours",
+        {
+          description: "11 S Clerk St, Newington, Edinburgh",
+          coordinates: [55.950903, -3.185356],
+          postcode: "EH8 9JD"
+        },
+        100,
+        new Date(2021, 10, 3, 16),
+      );
+      return activitiesCollection.insertMany([activity1, activity2, activity3, activity5, activity6,
+        activity7, activity8, activity9, activity10, activity11, activity12, activity13, activity14, 
+        activity15, activity16, activity17, activity18, activity19, activity20])
     }).then(() => client.close())
   })
   .catch(console.err);
