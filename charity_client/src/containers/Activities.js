@@ -27,7 +27,7 @@ const Activities = ({charity}) => {
     setActivities(temp);
   }
 
-  const deleteActivity = (id) => {
+  const removeActivity = (id) => {
     const temp = activities.map(s => s);
     const indexToDel = temp.map(s => s._id).indexOf(id);
     console.log(indexToDel);
@@ -39,7 +39,7 @@ const Activities = ({charity}) => {
   return (
     <>
       <ActivityForm charity={charity} addActivity={addActivity} />
-      <ActivityList activities={activities} deleteActivity={deleteActivity}/>
+      <ActivityList activities={activities} removeActivity={removeActivity}/>
     </>
   );
 }

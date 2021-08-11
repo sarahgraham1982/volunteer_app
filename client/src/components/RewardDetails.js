@@ -25,7 +25,6 @@ const RewardDetails = ({ reward, redeemReward, redeemed }) => {
       <p>Reward Category: {reward.category}</p>
       {displayRedeem()}
       {message && <p>{message}</p>}
-      
     </div>
   );
 };

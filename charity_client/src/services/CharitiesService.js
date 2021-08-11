@@ -19,3 +19,13 @@ export const deleteCharity = (id) => {
         method: 'DELETE'
     })
 }
+
+export const updateCharity = (id, data) => {
+    return fetch(baseURL + id, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    }).then((res) => res.json());
+  };

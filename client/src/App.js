@@ -9,7 +9,6 @@ import Footer from "./components/Footer";
 import ErrorPage from "./components/ErrorPage";
 import Header from "./components/Header";
 import MyRewards from "./containers/MyRewards";
-import MyActivities from "./containers/MyActivities";
 import EditProfile from "./containers/EditProfile";
 import { useState } from "react";
 import { useEffect } from "react";
@@ -86,7 +85,6 @@ const App = () => {
             path="/myrewards"
             component={() => <MyRewards user={user} />}
           />
-          <Route path="/myactivities" component={MyActivities} />
           <Route
             path="/editprofile"
             component={() => (
