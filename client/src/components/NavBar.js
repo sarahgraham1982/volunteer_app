@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import '../css/NavBar.css';
+// import Link not adding and pushing for some weird reason
 
 
 
