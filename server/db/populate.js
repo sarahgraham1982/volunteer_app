@@ -368,7 +368,7 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
         new Date(2021, 10, 3, 16),
       );
       const activity8 = new Activity(
-        "help us by planing a fun filled day",
+        "Help us by planning a fun-filled day",
         children1st._id,
         "Children 1st is Scotland’s National Children’s Charity. We help Scotland’s families to put children first with practical advice and support in difficult times. We support survivors of abuse, neglect, and other traumatic events towards recovery.",
         "3 hours",
@@ -449,7 +449,7 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
         "Donations",
         streetwork._id,
         "We provide a range of services and support to the unhoused in Edinburgh. Our Streetwork service has been operating in Edinburgh for 25+ years.",
-        "late evening",
+        "an evening",
         {
           description: "22 Holyrood Rd, Edinburgh",
           coordinates: [55.949265, -3.182590],

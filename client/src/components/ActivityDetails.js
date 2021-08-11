@@ -12,15 +12,15 @@ const ActivityDetails = ({ activity, apply, applied }) => {
       <h4>Charity: {activity.charity.name}</h4>
       <p>Duration: {activity.duration}</p>
       <p>Location: {activity.location.description}</p>
-      <Collapsible trigger="More Details">
+      <Collapsible trigger={<button>More Details</button>}>
         <p>{activity.description}</p>
         {applied ? (
           <div>APPLIED</div>
         ) : (
-          <button onClick={() => apply(activity)}>Apply Now!</button>
+          <button onClick={() => apply(activity)} className="button">Apply Now!</button>
         )}
       </Collapsible>
-      
+      <hr/>
     </div>
   );
 };
