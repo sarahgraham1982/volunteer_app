@@ -40,17 +40,16 @@ const MyAccount = ({ user }) => {
       <div className="my-activity-map">
         {activities.map((activity) => {
 
-          return (
-            <ActivityDetails
-              applied={true}
-              key={activity._id}
-              activity={activity}
-            />
-          );
-
-        })}
+        return (
+          <ActivityDetails
+            applied={true}
+            key={activity._id}
+            activity={activity}
+          />
+        );
+      })}
       </div>
-      <div>
+      <div className="my-rewards-button">
         <Link to="/myrewards">My Rewards</Link>
       </div>
     

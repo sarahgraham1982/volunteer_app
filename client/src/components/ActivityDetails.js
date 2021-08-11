@@ -20,7 +20,7 @@ const ActivityDetails = ({ activity, apply, applied }) => {
           <button onClick={() => apply(activity)}>Apply Now!</button>
         )}
       </Collapsible>
-      <hr></hr>
+      
     </div>
   );
 };
