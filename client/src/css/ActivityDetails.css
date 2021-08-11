@@ -1,5 +1,6 @@
 .activity-detail {
     background-color: rgb(216, 216, 216);
+    margin: 10px;
     padding: 20px;
     
 }
@@ -25,4 +26,8 @@
     cursor:pointer;
     display:block;
     font-weight: bold;
+}
+
+.activity-detail h1 {
+    color: #F60A8F;
 }

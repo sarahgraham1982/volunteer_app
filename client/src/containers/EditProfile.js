@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import "../css/EditProfile.css";
 
 const EditProfile = ({ user, updateUser, submitted }) => {
   const [name, setName] = useState("");
@@ -19,6 +20,7 @@ const EditProfile = ({ user, updateUser, submitted }) => {
   };
   if (!user) return "loading...";
   return (
+    <div className="edit-form">
     <form onSubmit={handleSubmit}>
       <div>
         <label htmlFor="name">Your Name:</label>
@@ -42,12 +44,15 @@ const EditProfile = ({ user, updateUser, submitted }) => {
           onChange={(e) => setDescription(e.target.value)}
         />
       </div>
-      <div>
+      <div className="input-button">
         <input type="submit" value="Save" />
       </div>
       {submitted ? <p>Successfully saved!</p> : null}
+      <div className="go-back-button">
       <Link to="/myaccount">Go Back</Link>
+      </div>
     </form>
+    </div>
   );
 };
 

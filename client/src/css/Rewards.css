@@ -5,3 +5,12 @@
 .reward-category-buttons {
     
 }
+
+.point-count {
+    background-color: #5bace4;
+}
+
+.point-count p {
+    color: white;
+    padding: 5px;
+}
