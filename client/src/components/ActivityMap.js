@@ -1,6 +1,8 @@
 import React from 'react';
 import {MapContainer, Circle, TileLayer, Marker, Popup} from 'react-leaflet';
 import { haveIApplied } from '../helpers/helpers';
+import {Popup as Pup} from 'reactjs-popup';
+import '../css/ActivityMap.css'
 
 const ActivityMap = ({activities, apply, user}) => {
 
@@ -20,6 +22,7 @@ const ActivityMap = ({activities, apply, user}) => {
         {activities.map(
           activity => {
             const applied = haveIApplied(activity, user)
+            const datetime = new Date(activity.datetime)
             return (
               <Marker
                 key={activity.id}
@@ -28,10 +31,15 @@ const ActivityMap = ({activities, apply, user}) => {
               >
                 <Popup>
                   <h3>{activity.title}</h3>
-                  <h4>{activity.charity.name}</h4>
-                  <p>{activity.duration}</p>
-                  <p>{activity.location.description}</p>
-                  {applied ? <div>APPLIED</div> : <button onClick={() => apply(activity)}>Apply Now!</button>}
+                  <h4>Charity: {activity.charity.name}</h4>
+                  <p>Date: {datetime.toDateString()}</p>
+                  <p>Time: {datetime.toLocaleTimeString()}</p>
+                  <p>Duration: {activity.duration}</p>
+                  <p>Location: {activity.location.description}</p>
+                  <Pup trigger={<button>More Details</button>} position="top center" className="pup">
+                    <p>{activity.description}</p>
+                    {applied ? <div>APPLIED</div> : <button onClick={() => apply(activity)}>Apply Now!</button>}
+                  </Pup>
                 </Popup>
               </Marker>
             )

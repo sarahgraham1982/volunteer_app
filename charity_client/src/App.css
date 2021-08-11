@@ -10,9 +10,8 @@
   width: 100%;
 }
 
-
 .Collapsible {
-  background-color: rgb(93, 180, 93);
+  background-color: #99c47d;
   border: solid 1px black;
   padding: 5px;
 }
