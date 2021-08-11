@@ -29,3 +29,7 @@
     display:block;
     font-weight: bold;
 }
+
+.activity-detail h1 {
+    color: #F60A8F;
+}
