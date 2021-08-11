@@ -1,4 +1,3 @@
-//this will display your profile information and allow you to edit your user info
 import React from "react";
 import {ageFromDOB} from "../helpers/helpers"
 import '../css/Profile.css';

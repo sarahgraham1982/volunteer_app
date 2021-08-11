@@ -8,14 +8,8 @@ import {Link} from 'react-router-dom';
 const HomePage = ({user, allUsers, setUser}) => {
   return ( 
 
-
     <div className="welcome-container">
       <div className="top">
-        {/* <div className="welcome-text">
-          
-          <h2>A Thank You for Giving Back.</h2>
-          <p>Get rewards for volunteering in your community</p>
-        </div> */}
 
         <div className="button1">
           <Link to="">It's Easy to Get Involved</Link>

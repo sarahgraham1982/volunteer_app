@@ -19,19 +19,19 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
     const charity2 = new Charity("British Heart Foundation", "Heart Charity");
     const charity3 = new Charity("Scottish Book Trust", "Transforming lives through reading");
     const charity4 = new Charity("Volunteer Edinburgh", "We have been helping all sorts of people in Edinburgh find volunteering opportunities for over 45 years");
-    const charity5 = new Charity("Grass Market Community Project", "");
-    const charity6 = new Charity("Children 1st", "");
-    const charity7 = new Charity("Green Team", "");
-    const charity8 = new Charity("CCLASP", "");
-    const charity9 = new Charity("The Action Group", "");
-    const charity10 = new Charity("Hopscotch Children's Charity", "");
-    const charity11 = new Charity("Enable", "");
-    const charity12 = new Charity("Streetwork", "");
-    const charity13 = new Charity("Alzheimer's Scotland", "");
-    const charity14 = new Charity("Fresh Start", "");
-    const charity15 = new Charity("Friends of the Earth Scotland", "");
-    const charity16 = new Charity("Age Scotland", "");
-    const charity17 = new Charity("Pregnancy Counselling & Care", "");
+    const charity5 = new Charity("Grass Market Community Project", "Lorem ipsum dolor sit amet, consectetur adipiscing elit.");
+    const charity6 = new Charity("Children 1st", "Donec lorem ex, convallis quis sapien sed, tempor placerat nunc.");
+    const charity7 = new Charity("Green Team", "Morbi volutpat semper convallis.");
+    const charity8 = new Charity("CCLASP", "In pellentesque mauris nec enim gravida bibendum.");
+    const charity9 = new Charity("The Action Group", "Aenean in mauris a purus vestibulum tempus.");
+    const charity10 = new Charity("Hopscotch Children's Charity", "Etiam eu dapibus enim.");
+    const charity11 = new Charity("Enable", "Suspendisse quis neque pretium, vulputate sapien scelerisque, placerat nisi.");
+    const charity12 = new Charity("Streetwork", "Nunc sed consectetur nunc.");
+    const charity13 = new Charity("Alzheimer's Scotland", "Aliquam accumsan et justo id mollis.");
+    const charity14 = new Charity("Fresh Start", "Duis venenatis mauris quis diam elementum efficitur eu sit amet urna.");
+    const charity15 = new Charity("Friends of the Earth Scotland", "Donec egestas blandit libero, sit amet interdum sem suscipit quis.");
+    const charity16 = new Charity("Age Scotland", "Vivamus ac lacus lobortis, sollicitudin risus a, dignissim neque.");
+    const charity17 = new Charity("Pregnancy Counselling & Care", "Phasellus sed pharetra ex.");
 
 
     const charityPromise = charityCollection.insertMany([
@@ -231,7 +231,7 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
         const user1 = new User(
           "Scott Kivlin",
           new Date(1991, 1, 4),
-          "I'm something of an altruist, just out here trying to make the world a better place. So the other day, I was volunteering right, and I thought to myself, hey it's great to work for free and all, but you know what would make it even better... getting paid. So I mentioned my idea to Sarah and she was like, well it's not volunteering if you're getting paid is it? And I was like, yea I guess you're right.",
+          "I'm something of an altruist myself, just out here trying to make the world a better place. So the other day, I was volunteering right, and I thought to myself, hey it's great to work for free and all, but you know what would make it even better... getting paid. So I mentioned my idea to Sarah and she was like, well it's not volunteering if you're getting paid is it? And I was like, yea I guess you're right.",
           230,
           [],
           "email@example.com",
@@ -240,7 +240,7 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
         const user2 = new User(
           "Sarah Graham",
           new Date(1988, 3, 7),
-          "So Scott had an idea to pay people to volunteer, and I was like, that's great and all, but then it's not volunteering is it? You should be doing it out of the goodness of your own heart, mate. But then I thought to myself, well the more people there are volunteering, the better, even if we do have to incentivize people to do it. So, how about just not call it volunteering? It can be some weird middle-ground of incentivized work that's ultimately good for society. Volunteering for the postmodern world, I say.",
+          "So Scott had an idea to pay people to volunteer, and I was like, that's great and all, but then it's not volunteering is it? You should be doing it out of the goodness of your own heart, mate. But then I thought to myself, well, the more people there are volunteering the better, even if we do have to incentivize people to do it. So, how about just not calling it volunteering? It can be some weird middle-ground of incentivized work that's ultimately good for society. Volunteering for the postmodern world, I say.",
           480,
           [reward1._id],
           "email@example.com",
@@ -249,7 +249,7 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
         const user3 = new User(
           "Sam Hill",
           new Date(1993, 10, 11),
-          "I'm not that concerned about the moral implications of incentivizing people to volunteer. I mean ultimately what we're doing here is getting corporations to fund work that actually helps society. Those same corporations that exploit workers and destroy the environment in their dogged pursuit of profit. This is the very least they could do to make up for the abuse of capitalism, the very reason people need help from charities in the first place. This app is just a way to get a little of these companies' profit back into the hands of the communities they exploit.",
+          "I'm not that concerned about the moral implications of incentivizing people to volunteer. I mean ultimately what we're doing here is getting corporations to fund work that actually helps society. Those same corporations that exploit workers and destroy the environment in their dogged pursuit of profit. This is the very least they could do to make up for the abuse of capitalism, the very reason people need help from charities in the first place.",
           460,
           [reward2._id],
           "email@example.com",
@@ -258,7 +258,7 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
         const user4 = new User(
           "Garry Hall ",
           new Date(1993, 17, 3),
-          "You know, I helped make this app. I think it's pretty good. Anyway, I want to tell you a story. So, last month I was dealing with insomnia, so I traveled to the monastery to ask for adivce. The monk said that I had to believe in the act of sleep, that sleep was a privilege. Then he asked if I'd ever swam in the river because a good sleep was like surrendering yourself to the current. The monks in the monastery fish from the walls of the monastery. They don't use bait nor barb because they don't mean to catch anything. They merely do it for peace of mind. I don't think there's anythign especially profound in that.",
+          "You know, I helped make this app. I think it's pretty good. Anyway, I want to tell you a story... Last month I was dealing with insomnia, so I traveled to the monastery to ask for advice. The monk said that I had to believe in the act of sleep, that sleep was a privilege. Then he asked if I'd ever swam in the river because a good sleep was like surrendering yourself to the current. The monks there fish in from the walls of the monastery. They don't use bait or any barb because they don't mean to actually catch anything. They merely do it for peace of mind. I don't think there's anything especially profound in that.",
           450,
           [reward2._id, reward3._id],
           "email@example.com",
@@ -275,7 +275,7 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
       const activity1 = new Activity(
         "Clean up the park",
         volunteerEdinburgh._id,
-        "Hill walking and helping the community come together in this action-packed Saturday morning sesh. You'll get your very own light weight grab and grip litter picker upper, a garbage bag, and a high vis vest. We'll let you loose in the craggy environs of Holyrood Park to spend the morning as you please. Wander through the dramatic landscape of this ancient volcanic wonderland of lochs and cliffs, peaks and valleys. A Little slice of the highlands right here in Edinburgh. Scour the earth for cigarette butts and broken bottles, used tissue and doggy poo bags. Think of yourself as something of an archaeologist that deals with the modern world, if that helps. We'll have a weigh off at 15:00 to win prizes for the top three pickers who collected the most litter.",
+        "Hill walking and helping the community come together in this action-packed Saturday morning sesh. You'll get your very own light weight grab and grip litter picker upper, a garbage bag, and a high vis vest. We'll let you loose in the craggy environs of Holyrood Park to spend the morning as you please. Wander through the dramatic landscape of this ancient volcanic wonderland of lochs and cliffs, peaks and valleys. A Little slice of the highlands right here in Edinburgh. Scour the earth for cigarette butts and broken bottles, used tissue and doggy poo bags.",
         "3 hours",
         {
           description: "Holyrood Park",
@@ -291,7 +291,7 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
       const activity2 = new Activity(
         "Help our boys",
         rosendael._id,
-        "We support youths in the community through mentorship and tutoring. We are looking for volunteer peers to spend time with our boys to help them develop constructive habits and healthy hobbies. Shoot some hoops, play guitar, or go for a hillwalk; the possibilities are open and we can offer a daily budget for any activities that are approved. Just no going to the pub, obviously. We could all use a strong role model in our lives. Take the time today to make a significant impact on a young man's life. Come down to the VA this Sunday at noon for a meet and greet where you will be paried with your mentee. We'll have tea and biscuits in the courtyard.",
+        "We support youths in the community through mentorship and tutoring. We are looking for volunteer peers to spend time with our boys to help them develop constructive habits and healthy hobbies. Shoot some hoops, play guitar, or go for a hillwalk; the possibilities are endless.",
         "an afternoon",
         {
           description: "53 Canongate, Edinburgh",
@@ -304,7 +304,7 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
       const activity3 = new Activity(
         "Help clean out our store rooms and have a cup of tea",
         bhf._id,
-        "Our storage rooms are a dismal sight. With the pandemic we have been inundated with donations, but we have not been able to open the shop to sell anything. We're up to our necks in piles of clothing. A mound of unmarked bags are blocking the entrance to the garage. One of our employees may be trapped in there. Kitchenware is perched about the place in precarious cairns that reach to the ceiling. Now that we can finally open back up we need to sort things out fast. Come on down this Thursday to take a crack at it. We'll be sifting and sorting and shipping things off to our shops around the city. You might even get some good finds out of it. See a cool vintage jumper? Take it, it's yours.",
+        "Our storage rooms are a dismal sight. With the pandemic we have been inundated with donations, but we have not been able to open the shop to sell anything. We're up to our necks in piles of clothing. A mound of unmarked bags are blocking the entrance to the garage.",
         "2.5 hours",
         {
           description: "136 Lothian Rd, Edinburgh",
@@ -318,7 +318,7 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
       const activity4 = new Activity(
         "Book collection",
         scottishBookTrust._id,
-        "Books. Who doesn't love books? As restrictions lift, we are ready to get back out there and collect all the book donations that have been offered in the past few months, but we can't do it alone. Mostly because we don't have a car. So if you have one, that would be great. You can be our chauffeur for the day, cruising around town, driving the speed limit, etc. We'll do the navigating. We'll also provide the tunes. So if you have an aux cord or bluetooth that would be great, actually only apply if you have a decent enough stereo because it's going to be alot of driving, and I get carsick when I don't have anything to listen to and Sheila will start whistling if it's quiet and I can't stand her whistling.",
+        "As restrictions lift, we are ready to get back out there and collect all the book donations that have been offered in the past few months, but we can't do it alone. Mostly because we don't have a car. So if you have one, that would be great. You can be our chauffeur for the day, cruising around town, driving the speed limit, etc. We'll do the navigating. We'll also provide the tunes. So if you have an aux cord or bluetooth that would be great, actually only apply if you have a decent enough stereo because it's going to be alot of driving, and I get carsick when I don't have anything to listen to and Sheila will start whistling if it's quiet and I can't stand her whistling.",
         "8 hours",
         {
           description: "55 High St, Edinburgh",

@@ -13,10 +13,7 @@ const ActivityDetails = ({ activity, apply, applied }) => {
       <p>Time: {datetime.toLocaleTimeString()}</p>
       
       <p>Duration: {activity.duration}</p>
-
-      
       <Collapsible trigger={<button>More Details</button>}>
-
         <p>{activity.description}</p>
         {applied ? (
           <div>APPLIED</div>

@@ -12,8 +12,8 @@
 
 .Collapsible {
   background-color: #99c47d;
-  border: solid 1px black;
-  padding: 5px;
+  padding: 10px;
+  margin-top:10px;
 }
 
 .Collapsible__trigger{

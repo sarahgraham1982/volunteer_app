@@ -1,7 +1,7 @@
 import React from 'react';
 import ActivityDetails from './ActivityDetails';
 
-const ActivityList = ({activities}) => {
+const ActivityList = ({activities, removeActivity}) => {
 
   console.log(activities)
   const activitiesList = activities.map((activity, index) => {
@@ -9,6 +9,7 @@ const ActivityList = ({activities}) => {
       <>
         <hr/>
         <ActivityDetails
+          removeActivity={removeActivity}
           key={index}
           activity={activity}
         />

@@ -4,12 +4,21 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import UserMenu from "./components/UserMenu";
 import { useState, useEffect } from "react";
-import { getCharities } from "./services/CharitiesService";
+import { getCharities, updateCharity } from "./services/CharitiesService";
 
 const App = () => {
 
   const [allCharities, setAllCharities] = useState([]);
   const [charity, setCharity] = useState(null);
+  const [submitted, setSubmitted] = useState(false);
+
+  useEffect(() => {
+    if (submitted) {
+      setTimeout(() => {
+        setSubmitted(false);
+      }, 5000);
+    }
+  }, [submitted]);
 
   useEffect(() => {
     getCharities().then((charities)=>{
@@ -23,12 +32,24 @@ const App = () => {
     setCharity(selectedCharity);
   }
 
+  function handleUpdateCharity(data) {
+    updateCharity(charity._id, data)
+      .then((newCharity) => {
+        setCharity(newCharity);
+        setSubmitted(true);
+      })
+  }
+
   return (
     <>
       <Header />
       <UserMenu 
+        charity={charity}
+        updateCharity={handleUpdateCharity}
         allCharities={allCharities} 
-        handleChange={handleChange}/>
+        handleChange={handleChange}
+        submitted={submitted}
+      />
       <Activities charity={charity}/>
       <Footer />
     </>
