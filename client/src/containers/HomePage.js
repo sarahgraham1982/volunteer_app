@@ -2,6 +2,7 @@ import React from "react";
 import '../css/HomePage.css';
 import welcome from './welcome.png';
 import UserMenu from "../components/UserMenu";
+import {Link} from 'react-router-dom';
 
 
 const HomePage = ({user, allUsers, setUser}) => {
@@ -17,7 +18,7 @@ const HomePage = ({user, allUsers, setUser}) => {
         </div> */}
 
         <div className="button1">
-          <a href ="/myaccount">Get Involved >></a>
+          <Link to="/myaccount">Get Involved</Link>
         </div> 
 
         <div className="middle">
@@ -27,10 +28,10 @@ const HomePage = ({user, allUsers, setUser}) => {
       </div>  
 
         <div className="button2">
-          <a href ="/activities">View All Activities >></a>
+          <Link to="/activities">View All Activities</Link>
         </div> 
         <div className="button3">
-          <a href ="/rewards">View All Rewards >></a>
+          <Link to="/rewards">View All Rewards</Link>
         </div>
       <div className="change-user"></div>
           <div>Change User:</div>
