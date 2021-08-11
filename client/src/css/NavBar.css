@@ -35,8 +35,8 @@
 
 
 @media screen and (max-width: 600px) {
-    .NavBar a:not(:first-child) {display: none;}
-    .NavBar a.icon {
+    .NavBar link:not(:first-child) {display: none;}
+    .NavBar link.icon {
       float: right;
       display: block;
     }
