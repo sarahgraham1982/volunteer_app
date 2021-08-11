@@ -21,6 +21,11 @@
   font-weight: bold;
 }
 
+.footer {
+  color: black;
+  text-align: center;
+}
+
 .form-container {
   display: flex;
   justify-content: center;
@@ -34,4 +39,8 @@
 .responsive {
   max-width: 100%;
   height: auto;
+}
+
+.select {
+  margin-bottom: 20px;
 }
