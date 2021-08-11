@@ -7,11 +7,13 @@ const ActivityDetails = ({ activity, apply, applied }) => {
   return (
     <div className="activity-detail">
       <h1>{activity.title}</h1>
+      <h4>Charity: {activity.charity.name}</h4>
+      <p>Location: {activity.location.description}</p>
       <p>Date: {datetime.toDateString()} </p>
       <p>Time: {datetime.toLocaleTimeString()}</p>
-      <h4>Charity: {activity.charity.name}</h4>
+      
       <p>Duration: {activity.duration}</p>
-      <p>Location: {activity.location.description}</p>
+      
       <Collapsible trigger="More Details">
         <p>{activity.description}</p>
         {applied ? (
