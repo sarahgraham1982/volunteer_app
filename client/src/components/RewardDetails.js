@@ -19,7 +19,7 @@ const RewardDetails = ({ reward, redeemReward, redeemed }) => {
     <div className="reward-detail">
       <h2>{reward.title}</h2>
       <p><h3>Brand: {reward.company}</h3></p>
-      <p>Description:{reward.description}</p>
+      <p>Description: {reward.description}</p>
       <p>Points: {reward.points}</p>
       <p>Expiry Date: {new Date(reward.expiryDate).toDateString()}</p>
       <p>Reward Category: {reward.category}</p>

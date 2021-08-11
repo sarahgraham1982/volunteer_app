@@ -3,7 +3,9 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Profile from "../components/Profile.js";
 import ActivityDetails from "../components/ActivityDetails.js";
+import '../css/MyAccount.css';
 import { getActivities } from "../services/ActivitiesService.js";
+
 
 const MyAccount = ({ user }) => {
   const [activities, setActivities] = useState([]);
@@ -24,10 +26,17 @@ const MyAccount = ({ user }) => {
   }, [user]);
   return (
     <>
+      <div className="my-profile-heading">
+      <h3>My Profile</h3></div>
       <Profile user={user} />
+      <div className="edit-button">
       <Link to="/editprofile">Edit Profile</Link>
-      <h3>My Activities</h3>
+      </div>
+      <div className="my-profile-heading">
+      <h3>My Activities</h3></div>
+      <div className="my-activity-map">
       {activities.map((activity) => {
+
         return (
           <ActivityDetails
             applied={true}
@@ -37,8 +46,10 @@ const MyAccount = ({ user }) => {
         );
       })}
       <div>
+
         <Link to="/myrewards">My Rewards</Link>
       </div>
+    
     </>
   );
 };

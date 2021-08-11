@@ -68,9 +68,11 @@ const Activities = ({ user }) => {
         resetActivities={resetActivities}
       />
       <p>
+        <div className="map-button">
         <button onClick={handleChange}>
           {listView ? "Map View" : "List View"}
         </button>
+        </div>
       </p>
       {listView ? (
         <ActivityList
