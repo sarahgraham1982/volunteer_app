@@ -202,7 +202,7 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
         const [reward1, reward2, reward3] = data.ops;
 
         const user1 = new User(
-          "Scott Russel George Kivlin ",
+          "Scott  Kivlin ",
           new Date(1991, 1, 4),
           "I'm trying to help. ",
           230,
@@ -211,7 +211,7 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
           "07777777777"
         );
         const user2 = new User(
-          "Sarah Victoria Graham ",
+          "Sarah Graham ",
           new Date(1988, 3, 7),
           "The points are so handy for nights in and out! ",
           480,
@@ -220,7 +220,7 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
           "07777777777"
         );
         const user3 = new User(
-          "Sam Hudson Hill",
+          "Sam  Hill",
           new Date(1999, 10, 11),
           "You know, I helped make this app. ",
           460,
