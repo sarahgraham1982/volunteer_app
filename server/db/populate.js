@@ -18,8 +18,7 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
     const charity1 = new Charity("Rosendael", "Scottish veterans residence");
     const charity2 = new Charity("British Heart Foundation", "Heart Charity");
     const charity3 = new Charity("Scottish Book Trust", "Transforming lives through reading");
-    const charity4 = new Charity("Volunteer Edinburgh",
-      "We have been helping all sorts of people in Edinburgh find volunteering opportunities for over 45 years");
+    const charity4 = new Charity("Volunteer Edinburgh", "We have been helping all sorts of people in Edinburgh find volunteering opportunities for over 45 years");
 
     const charityPromise = charityCollection.insertMany([
       charity1,
@@ -30,24 +29,24 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
 
     const reward1 = new Reward(
       "Steam",
-      "Get 20% off next steam sale",
-      "20 % Off next steam sale this voucher to get 20 % off your next game on Steam, the game must be under £30. Must be over 18 years of age to redeem. Terms and conditions apply",
+      "Get 20% off next Steam sale",
+      "Use this voucher to get 20% off your next game on Steam. The game must be under £30. You must be over 18 years of age to redeem. Terms and conditions apply.",
       500,
       new Date(2022, 3, 14, 17, 30),
       "Digital"
     );
     const reward2 = new Reward(
-      "Codeclan",
+      "CodeClan",
       "Get 100% off ",
-      "100% Off Next course codeclan sale", "use this voucher to get 100% off your next course at codeclan. You must 18 years of age to redeem .Terms and conditions apply",
+      "Use this voucher to get 100% off your next course at CodeClan. You must 18 years of age to redeem. Terms and conditions apply.",
       5000,
       new Date(2022, 3, 14, 17, 30),
       "Digital"
     );
     const reward3 = new Reward(
       "Steam",
-      "buy one get one free next steam sale",
-      "Buy one get one free next steam sale. Use this voucher to get you a game for free within an list of picked games on Steam,the game must be under £30. Must be over 18 years of age to redeem.Terms and conditions apply",
+      "Buy one get one free next Steam sale",
+      "Use this voucher to get a free game from a list of select games on Steam. The game must be under £30. You must be over 18 years of age to redeem. Terms and conditions apply.",
       580,
       new Date(2022, 4, 1, 17, 30),
       "Digital"
@@ -55,7 +54,7 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
     const reward4 = new Reward(
       "Codecademy",
       "Get 20% off next course",
-      "Get 20% off , This voucher gets you 20% off your next course at codecademy. You must be 18 years of age to redeem this. Terms and conditions apply",
+      "This voucher gets you 20% off your next course at Codecademy. You must be 18 years of age to redeem. Terms and conditions apply.",
       500,
       new Date(2022, 6, 10, 17, 30),
       "Digital"
@@ -63,15 +62,15 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
     const reward5 = new Reward(
       "Game",
       "Get 20% off next sale",
-      "20 % Off next steam sale this voucher to get 20 % off your next game in game. The game must be under £30. Must be over 18 years of age to redeem. Terms and conditions apply",
+      "Use this voucher to get 20% off your next game. The game must be under £30. You must be over 18 years of age to redeem. Terms and conditions apply.",
       430,
       new Date(2022, 1, 14, 14, 30),
       "Digital"
     );
     const reward6 = new Reward(
-      "Pizza hut",
+      "Pizza Hut",
       "£10 off your next order",
-      "This voucher gets you £10 off your next order, as long as the order is over £30. Must be over 16 of age to redeem.Terms and conditions",
+      "This voucher gets you £10 off your next order as long as the order is over £30. Must be over 16 years of age to redeem. Terms and conditions",
       500,
       new Date(2251, 0, 5, 10, 15),
       "Food"
@@ -79,15 +78,15 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
     const reward7 = new Reward(
       "China Munchy Box",
       "£10 off your next order over £30",
-      "This voucher get you £10 off your next order.Must be over 16 years of age to redeem ,Terms and conditions apply",
+      "This voucher gets you £10 off your next order. Must be over 16 years of age to redeem. Terms and conditions apply.",
       580,
       new Date(2251, 0, 5, 10, 15),
       "Food"
     );
     const reward8 = new Reward(
       "Pure Pizza",
-      "buy one get one free next order",
-      "This voucher gets you a free pizza, You must be over 16 years of age to redeem  ,Terms and conditions apply",
+      "Buy one get one free next order",
+      "This voucher gets you a free pizza when you buy one of equal or lesser value. You must be over 16 years of age to redeem. Terms and conditions apply.",
       500,
       new Date(2251, 0, 5, 10, 15),
       "Food"
@@ -95,7 +94,7 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
     const reward9 = new Reward(
       "Empire Brunch & Lunch",
       "Free French Toast",
-      "This voucher gets you a free French Toast. You must be over 16 years of age to redeem.Terms and conditions apply",
+      "This voucher gets you a free French Toast. You must be 16 years of age to redeem. Terms and conditions apply.",
       730,
       new Date(2251, 0, 5, 10, 15),
       "Food"
@@ -103,15 +102,15 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
     const reward10 = new Reward(
       "Costa",
       "Free latte",
-      "This voucher gets you a free latte, You must be over 16 years of age to redeem ,Terms and conditions",
+      "This voucher gets you a free latte. You must be 16 years of age to redeem. Terms and conditions apply.",
       200,
       new Date(2251, 0, 5, 10, 15),
       "Food"
     );
     const reward11 = new Reward(
       "Bonnie Burrito",
-      "Free side Nachos",
-      "This voucher gets you a free small Nachos. You must be over 16 years of age to redeem ,Terms and conditions",
+      "Free side of nachos",
+      "This voucher gets you a free small nachos. You must be 16 years of age to redeem. Terms and conditions.",
       700,
       new Date(2023, 0, 13, 14, 40),
       "food"
@@ -119,7 +118,7 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
     const reward12 = new Reward(
       "Adidas",
       "50% off shoes",
-      "This voucher gets you 50% off shoes when you order them with Adidas. You must be over 18 years of age to redeem. Terms and conditions apply",
+      "This voucher gets you 50% off a pair of shoes when you order them with Adidas. You must be over 18 years of age to redeem. Terms and conditions apply.",
       680,
       new Date(2023, 0, 13, 12, 32),
       "clothes"
@@ -127,7 +126,7 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
     const reward13 = new Reward(
       "LEVI'S",
       "30% off next order",
-      "This voucher gets you 30% off your next order with LEVI'S. You must be over 18 years of age to redeem. Terms and conditions apply",
+      "This voucher gets you 30% off your next order with LEVI'S. You must be over 18 years of age to redeem. Terms and conditions apply.",
       720,
       new Date(2023, 0, 13, 12, 32),
       "clothes"
@@ -135,7 +134,7 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
     const reward14 = new Reward(
       "NORTH FACE",
       "20% all outerwear",
-      "This deal gets you 20% off all outerwear with North Face. You must be 16 years of age to redeem. Terms and conditions apply",
+      "This deal gets you 20% off all outerwear with North Face. You must be 16 years of age to redeem. Terms and conditions apply.",
       800,
       new Date(2023, 0, 13, 12, 32),
       "clothes"
@@ -143,7 +142,7 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
     const reward15 = new Reward(
       "CLARKS",
       "50% off summer selection",
-      "This deal gets you 50% off everything in the summer selection. You must be 16 years of age to redeem. Terms and conditions apply",
+      "This deal gets you 50% off everything in the summer selection. You must be 16 years of age to redeem. Terms and conditions apply.",
       830,
       new Date(2023, 0, 13, 12, 32),
       "clothes"
@@ -151,7 +150,7 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
     const reward16 = new Reward(
       "NEXT",
       "20% off next order over £50",
-      "This deal gets you 20% off your next order is over £50. You must be 18 years of age to redeem. Terms and conditions apply",
+      "This deal gets you 20% off your next order over £50. You must be 18 years of age to redeem. Terms and conditions apply.",
       680,
       new Date(2023, 0, 13, 12, 32),
       "clothes"
@@ -159,7 +158,7 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
     const reward17 = new Reward(
       "DR. MARTENS",
       "10% off next order",
-      "The voucher gets you the. You must be 18 years of age to redeem. Terms and conditions apply",
+      "This voucher gets you 10% off your next order. You must be 18 years of age to redeem. Terms and conditions apply.",
       800,
       new Date(2023, 0, 13, 12, 32),
       "clothes"
@@ -167,7 +166,7 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
     const reward18 = new Reward(
       "River Island",
       "25% off next order",
-      "This deal get you a grand 25% off your next order. You must be 16 years of age to redeem. Terms and conditions apply",
+      "This deal gets you a grand 25% off your next order. You must be 16 years of age to redeem. Terms and conditions apply.",
       670,
       new Date(2023, 0, 13, 12, 32),
       "clothes"
@@ -175,7 +174,7 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
     const reward19 = new Reward(
       "New Look",
       "10% off next order",
-      "This voucher give you 10% off your next order over £30. You must be 16 years of age to redeem. Terms and conditions apply",
+      "This voucher gets you 10% off your next order over £30. You must be 16 years of age to redeem. Terms and conditions apply.",
       570,
       new Date(2023, 0, 13, 12, 32),
       "clothes"
@@ -183,7 +182,7 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
     const reward20 = new Reward(
       "Urban Outfitters",
       "25% off next order ",
-      "This deal give you a whopping 25% of your next order. You must be 18 years of age to redeem. Terms and conditions apply",
+      "This deal gets you a whopping 25% of your next order. You must be 18 years of age to redeem. Terms and conditions apply.",
       780,
       new Date(2023, 0, 13, 12, 32),
       "clothes"
@@ -191,7 +190,7 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
     const reward21 = new Reward(
       "Rokit",
       "10% off next order",
-      "This voucher gives you 10% off. You must be 18 years of age. Terms and conditions apply",
+      "This voucher gives you 10% off your next order with Rokit. You must be 18 years of age to redeem. Terms and conditions apply.",
       800,
       new Date(2023, 0, 13, 12, 32),
       "clothes"

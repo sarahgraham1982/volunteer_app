@@ -4,13 +4,14 @@ import { Link } from "react-router-dom";
 import Profile from "../components/Profile.js";
 import ActivityDetails from "../components/ActivityDetails.js";
 import '../css/MyAccount.css';
+import { getActivities } from "../services/ActivitiesService.js";
+
 
 const MyAccount = ({ user }) => {
   const [activities, setActivities] = useState([]);
   useEffect(() => {
     if (!user) return;
-    fetch("http://localhost:5000/api/activities/")
-      .then((res) => res.json())
+    getActivities()
       .then((activities) => {
         const myActivityies = [];
         activities.forEach((activity) => {
@@ -35,9 +36,17 @@ const MyAccount = ({ user }) => {
       <h3>My Activities</h3></div>
       <div className="my-activity-map">
       {activities.map((activity) => {
-        return <ActivityDetails applied={true} key={activity._id} activity={activity} />;
-      })}</div>
-      <div className="my-rewards-button">
+
+        return (
+          <ActivityDetails
+            applied={true}
+            key={activity._id}
+            activity={activity}
+          />
+        );
+      })}
+      <div>
+
         <Link to="/myrewards">My Rewards</Link>
       </div>
     
