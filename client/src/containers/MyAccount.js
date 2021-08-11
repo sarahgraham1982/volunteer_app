@@ -45,8 +45,8 @@ const MyAccount = ({ user }) => {
           />
         );
       })}
-      <div>
-
+      </div>
+      <div className="my-rewards-button">
         <Link to="/myrewards">My Rewards</Link>
       </div>
     
