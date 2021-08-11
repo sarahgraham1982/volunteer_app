@@ -6,7 +6,7 @@ Give&Get is an online volunteering hub where charities can post activities and v
 
 Instructions for how to get up and running...
 
-### Server
+## Server
 
 Install server dependencies:
 
@@ -26,6 +26,8 @@ Run express:
 ```
 npm run server:dev
 ```
+
+## Client
 
 The application has a volunteer-side client and a charity-side client, so there are effectively two seperate interfaces for the two parties, both of which access information from the one server.
 ### Volunteer Client
