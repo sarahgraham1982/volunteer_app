@@ -11,10 +11,12 @@ const NavBar = () => {
   return (
     <div className="NavBar" id="MyNavBar">
       <div class="NavBar" id="myNavBar">
-    <a href="/" class="active">Home</a>
-    <a href="/activities">Give Your Time</a>
-    <a href="/rewards">Get Rewards</a>
-    <a href="/myaccount">My Account</a>
+        <Link to="/">Home</Link>
+        <Link to="/activities">Give Your Time</Link>
+        <Link to="/rewards">Get Rewards</Link>
+        <Link to="/myaccount">My Account</Link>
+
+    {/* dont know what this is below */}
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
       <i class="fa fa-bars"></i>
   </a>
@@ -37,7 +39,7 @@ const NavBar = () => {
   
   );
 
-
+// found online but not working! WELP
 function myFunction() {
   var x = document.getElementById("myNavBar");
   if (x.className === "NavBar") {
