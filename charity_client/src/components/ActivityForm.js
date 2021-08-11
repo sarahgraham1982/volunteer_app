@@ -33,7 +33,7 @@ const ActivityForm = ({addActivity, charity}) => {
 
     return (
         <form onSubmit={handleSubmit}>
-          <Collapsible trigger="Add an activity">
+          <Collapsible trigger={<button>Add an activity</button>}>
             <hr/>
             <div>
               <label htmlFor="title">Title:</label>
