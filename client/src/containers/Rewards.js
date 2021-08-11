@@ -23,7 +23,7 @@ const Rewards = ({ redeemReward, user }) => {
   if (!user) return "loading...";
   return (
     <>
-
+      <div className="get-rewards-search">
       <h4>Get Rewards </h4>
       <div>Browse By Category...</div>
       <button onClick={() => setCategory("all")}>All Categories</button>
@@ -33,6 +33,7 @@ const Rewards = ({ redeemReward, user }) => {
       <p>
         <strong>Your Points:</strong> {user.noOfPoints}
       </p>
+      </div>
       <RewardList rewards={rewards} redeemReward={redeemReward} user={user} category={category} />
 
     </>
