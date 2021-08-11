@@ -229,27 +229,27 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
         const [reward1, reward2, reward3] = data.ops;
 
         const user1 = new User(
-          "Scott  Kivlin ",
+          "Scott Kivlin",
           new Date(1991, 1, 4),
-          "I'm trying to help. ",
+          "I'm something of an altruist, just out here trying to make the world a better place. So the other day, I was volunteering right, and I thought to myself, hey it's great to work for free and all, but you know what would make it even better... getting paid. So I mentioned my idea to Sarah and she was like, well it's not volunteering if you're getting paid is it? And I was like, yea I guess you're right.",
           230,
           [],
           "email@example.com",
           "07777777777"
         );
         const user2 = new User(
-          "Sarah Graham ",
+          "Sarah Graham",
           new Date(1988, 3, 7),
-          "The points are so handy for nights in and out! ",
+          "So Scott had an idea to pay people to volunteer, and I was like, that's great and all, but then it's not volunteering is it? You should be doing it out of the goodness of your own heart, mate. But then I thought to myself, well the more people there are volunteering, the better, even if we do have to incentivize people to do it. So, how about just not call it volunteering? It can be some weird middle-ground of incentivized work that's ultimately good for society. Volunteering for the postmodern world, I say.",
           480,
           [reward1._id],
           "email@example.com",
           "07777777777"
         );
         const user3 = new User(
-          "Sam  Hill",
-          new Date(1999, 10, 11),
-          "You know, I helped make this app. ",
+          "Sam Hill",
+          new Date(1993, 10, 11),
+          "I'm not that concerned about the moral implications of incentivizing people to volunteer. I mean ultimately what we're doing here is getting corporations to fund work that actually helps society. Those same corporations that exploit workers and destroy the environment in their dogged pursuit of profit. This is the very least they could do to make up for the abuse of capitalism, the very reason people need help from charities in the first place. This app is just a way to get a little of these companies' profit back into the hands of the communities they exploit.",
           460,
           [reward2._id],
           "email@example.com",
@@ -258,7 +258,7 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
         const user4 = new User(
           "Garry Hall ",
           new Date(1993, 17, 3),
-          "You know, I also helped make this app. ",
+          "You know, I helped make this app. I think it's pretty good. Anyway, I want to tell you a story. So, last month I was dealing with insomnia, so I traveled to the monastery to ask for adivce. The monk said that I had to believe in the act of sleep, that sleep was a privilege. Then he asked if I'd ever swam in the river because a good sleep was like surrendering yourself to the current. The monks in the monastery fish from the walls of the monastery. They don't use bait nor barb because they don't mean to catch anything. They merely do it for peace of mind. I don't think there's anythign especially profound in that.",
           450,
           [reward2._id, reward3._id],
           "email@example.com",
