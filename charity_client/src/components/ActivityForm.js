@@ -62,7 +62,7 @@ const ActivityForm = ({addActivity, charity}) => {
               <input placeholder="postcode" onChange={onChange} type="text" id="location.postcode" /> */}
             {/* </div> */}
             <div>
-              <label htmlFor="points">Points:</label>
+              <label htmlFor="points">Points offered:</label>
             </div>
             <div>
               <input onChange={onChange} type="text" id="points" />
