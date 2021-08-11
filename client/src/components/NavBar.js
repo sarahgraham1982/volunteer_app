@@ -1,7 +1,7 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+// import {Link} from 'react-router-dom';
 import '../css/NavBar.css';
-// import Link not adding and pushing for some weird reason
+
 
 
 
@@ -12,10 +12,11 @@ const NavBar = () => {
   return (
     <div className="NavBar" id="MyNavBar">
       <div class="NavBar" id="myNavBar">
-        <Link to="/">Home</Link>
-        <Link to="/activities">Give Your Time</Link>
-        <Link to="/rewards">Get Rewards</Link>
-        <Link to="/myaccount">My Account</Link>
+      <a href="/" class="active">Home</a>
+      <a href="/activities">Give Your Time</a>
+      <a href="/rewards">Get Rewards</a>
+      <a href="/myaccount">My Account</a>
+        
 
     {/* dont know what this is below */}
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
