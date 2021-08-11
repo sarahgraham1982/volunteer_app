@@ -12,7 +12,7 @@ const ActivityDetails = ({activity}) => {
       <p>Date: {datetime.toDateString()}</p>
       <p>Duration: {activity.duration}</p>
       <p>Location: {activity.location.description}</p>
-      <p>Description: {activity.description}</p>
+      <p>{activity.description}</p>
       <p>{applicants}</p>
     </div>
   )
