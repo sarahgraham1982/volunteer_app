@@ -12,8 +12,10 @@ const Profile = ({ user }) => {
       <p><strong>Age:</strong> {ageFromDOB(new Date(user.dob))}</p>
       <h3>About Me</h3>
       <p>{user.aboutMe}</p>
+      <div>
       <h3>Points</h3>
       <p>{user.noOfPoints}</p>
+      </div>
     </div>
   );
 };
