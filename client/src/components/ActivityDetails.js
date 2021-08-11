@@ -14,7 +14,7 @@ const ActivityDetails = ({ activity, apply, applied }) => {
       
       <p>Duration: {activity.duration}</p>
 
-      <p>Location: {activity.location.description}</p>
+      
       <Collapsible trigger={<button>More Details</button>}>
 
         <p>{activity.description}</p>

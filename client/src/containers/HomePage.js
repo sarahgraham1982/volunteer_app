@@ -18,7 +18,7 @@ const HomePage = ({user, allUsers, setUser}) => {
         </div> */}
 
         <div className="button1">
-          <Link to="/myaccount">Get Involved</Link>
+          <Link to="">It's Easy to Get Involved</Link>
         </div> 
 
         <div className="middle">
@@ -28,10 +28,10 @@ const HomePage = ({user, allUsers, setUser}) => {
       </div>  
 
         <div className="button2">
-          <Link to="/activities">View All Activities</Link>
+          <Link to="/activities">View All Activities >></Link>
         </div> 
         <div className="button3">
-          <Link to="/rewards">View All Rewards</Link>
+          <Link to="/rewards">View All Rewards >></Link>
         </div>
       <div className="change-user"></div>
           <div>Change User:</div>

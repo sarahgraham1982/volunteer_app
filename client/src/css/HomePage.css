@@ -67,9 +67,9 @@
     margin-bottom: 3px;
 }
 
-.button1:hover {
+/* .button1:hover {
     background-color: black;
-}
+} */
 
     
 
@@ -94,6 +94,7 @@
     transition-duration: 0.4s;
     position: relative;
     margin-top: 3px;
+    margin-bottom:5px;
 }
 
 .button3:hover {
