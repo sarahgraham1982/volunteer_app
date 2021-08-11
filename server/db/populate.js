@@ -19,12 +19,39 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
     const charity2 = new Charity("British Heart Foundation", "Heart Charity");
     const charity3 = new Charity("Scottish Book Trust", "Transforming lives through reading");
     const charity4 = new Charity("Volunteer Edinburgh", "We have been helping all sorts of people in Edinburgh find volunteering opportunities for over 45 years");
+    const charity5 = new Charity("Grass Market Community Project", "");
+    const charity6 = new Charity("Children 1st", "");
+    const charity7 = new Charity("Green Team", "");
+    const charity8 = new Charity("CCLASP", "");
+    const charity9 = new Charity("The Action Group", "");
+    const charity10 = new Charity("Hopscotch Children's Charity", "");
+    const charity11 = new Charity("Enable", "");
+    const charity12 = new Charity("Streetwork", "");
+    const charity13 = new Charity("Alzheimer's Scotland", "");
+    const charity14 = new Charity("Fresh Start", "");
+    const charity15 = new Charity("Friends of the Earth Scotland", "");
+    const charity16 = new Charity("Age Scotland", "");
+    const charity17 = new Charity("Pregnancy Counselling & Care", "");
+
 
     const charityPromise = charityCollection.insertMany([
       charity1,
       charity2,
       charity3,
       charity4,
+      charity5, 
+      charity6, 
+      charity7,
+      charity8,
+      charity9,
+      charity10,
+      charity11,
+      charity12, 
+      charity13, 
+      charity14,
+      charity15, 
+      charity16, 
+      charity17
     ]);
 
     const reward1 = new Reward(
@@ -243,7 +270,7 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
     Promise.all([rewardsUsersPromise, charityPromise]).then((data) => {
       const [userData, charityData] = data
       const [user1, user2, user3, user4] = Object.values(userData.ops)
-      const [rosendael, bhf, scottishBookTrust, volunteerEdinburgh] = Object.values(charityData.ops)
+      const [rosendael, bhf, scottishBookTrust, volunteerEdinburgh, grassmarketCommunityProject, children1st, greenTeam, CCLASP, theActionGroup, hopscotchChildrenCharity, enable, streetwork, alzheimersScotlandNationalOffice, freshStart, friendsOfTheEarthScotland, ageScotland, pregnancyCounsellingCare] = Object.values(charityData.ops)
 
       const activity1 = new Activity(
         "Clean up the park",
@@ -302,39 +329,39 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
         new Date(2021, 10, 3, 16),
       );
       const activity5 = new Activity(
-        "help us feed the homeless",
-        GrassmarketCommunityProject._id,
-        " The Grassmarket Community Project supports Edinburgh’s most vulnerable people whilst providing the highest quality customer service.",
+        "Help us feed the unhoused",
+        grassmarketCommunityProject._id,
+        "The Grassmarket Community Project supports Edinburgh’s most vulnerable people whilst providing the highest quality customer service.",
         "3 hours",
         {
           description: "86 Candlemaker Row, Edinburgh",
-          coordinates: [55.950903, -3.185356],
+          coordinates: [55.947812, -3.193377],
           postcode: "EH12QA"
         },
         340,
         new Date(2021, 10, 3, 16),
       );
       const activity6 = new Activity(
-        "help us cook for the homeless",
-        GrassmarketCommunityProject._id,
-        " The Grassmarket Community Project supports Edinburgh’s most vulnerable people whilst providing the highest quality customer service.",
+        "Help us cook for the unhoused",
+        grassmarketCommunityProject._id,
+        "The Grassmarket Community Project supports Edinburgh’s most vulnerable people whilst providing the highest quality customer service.",
         "3 hours",
         {
           description: "86 Candlemaker Row, Edinburgh",
-          coordinates: [55.950903, -3.185356],
+          coordinates: [55.947812, -3.193377],
           postcode: "EH12QA"
         },
         550,
         new Date(2021, 10, 3, 16),
       );
       const activity7 = new Activity(
-        "help us by taking some calls",
-        Children1st._id,
-        " Children 1st is Scotland’s National Children’s Charity. We help Scotland’s families to put children first, with practical advice and with support in difficult times. And when the worst happens, we support survivors of abuse, neglect, and other traumatic events in childhood, to recover",
+        "Help us by taking some calls",
+        children1st._id,
+        "Children 1st is Scotland’s National Children’s Charity. We help Scotland’s families to put children first with practical advice and support in difficult times. We support survivors of abuse, neglect, and other traumatic events towards recovery.",
         "3 hours",
         {
           description: "83 Whitehouse Loan, Edinburgh",
-          coordinates: [55.950903, -3.185356],
+          coordinates: [55.935930, -3.201669],
           postcode: "EH91AT"
         },
         230,
@@ -342,174 +369,174 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
       );
       const activity8 = new Activity(
         "help us by planing a fun filled day",
-        Children1st._id,
-        " Children 1st is Scotland’s National Children’s Charity. We help Scotland’s families to put children first, with practical advice and with support in difficult times. And when the worst happens, we support survivors of abuse, neglect, and other traumatic events in childhood, to recover",
+        children1st._id,
+        "Children 1st is Scotland’s National Children’s Charity. We help Scotland’s families to put children first with practical advice and support in difficult times. We support survivors of abuse, neglect, and other traumatic events towards recovery.",
         "3 hours",
         {
           description: "83 Whitehouse Loan, Edinburgh",
-          coordinates: [55.950903, -3.185356],
+          coordinates: [55.935930, -3.201669],
           postcode: "EH91AT"
         },
         550,
         new Date(2021, 10, 3, 16),
       );
       const activity9 = new Activity(
-        "help us plant some trees",
-        GreenTeam._id,
-        " The Green Team has been successfully running programmes of outdoor activities for young people since 1995.",
+        "Help us plant some trees",
+        greenTeam._id,
+        "The Green Team has been successfully running programmes of outdoor activities for young people since 1995.",
         "5 hours",
         {
           description: "2 McLeod St, Edinburgh",
-          coordinates: [55.950903, -3.185356],
+          coordinates: [55.938984, -3.230441],
           postcode: "EH112ND"
         },
         535,
         new Date(2021, 10, 3, 16),
       );
       const activity10 = new Activity(
-        "dress up (for the kids)",
+        "Dress up for the kids",
         CCLASP._id,
-        " We help children and teenagers suffering from cancer or leukaemia in Scotland. We also help diagnosed families and bereaved families. ",
+        "We help children and teenagers suffering from cancer or leukaemia in Scotland. We also offer supprt to diagnosed families and bereaved families.",
         "an afternoon",
         {
-          description: " 4 Upper Craigour, Edinburgh",
-          coordinates: [55.950903, -3.185356],
+          description: "4 Upper Craigour, Edinburgh",
+          coordinates: [55.918927, -3.137983],
           postcode: "EH177SF"
         },
         600,
         new Date(2021, 10, 3, 16),
       );
       const activity11 = new Activity(
-        "run a stall at one of our bake sales",
-        TheActionGroup._id,
-        " The Action Group is about 'no barriers – for all of life.' · We could use lots of fancy words to sum us up, but really it comes down to you, ",
+        "Run a stall at one of our bake sales",
+        theActionGroup._id,
+        "The Action Group is about 'no barriers – for all of life'. We could use lots of fancy words to sum us up, but really it comes down to you.",
         "an afternoon",
         {
-          description: " Norton Park Centre, 57 Albion Rd, Edinburgh ",
-          coordinates: [55.950903, -3.185356],
+          description: "Norton Park Centre, 57 Albion Rd, Edinburgh ",
+          coordinates: [55.961251, -3.167225],
           postcode: "EH75QY"
         },
         220,
         new Date(2021, 10, 3, 16),
       );
       const activity12 = new Activity(
-        "donate some toys ",
-        HopscotchchildrenCharity._id,
-        " HopScotch is a children's charity in Edinburgh providing respite breaks for disadvantaged children living in Scotland",
+        "Donate some toys",
+        hopscotchChildrenCharity._id,
+        "HopScotch is a children's charity in Edinburgh providing respite for disadvantaged children living in Scotland.",
         "an afternoon",
         {
           description: " Norton Park Centre, 57 Albion Rd, Edinburgh ",
-          coordinates: [55.950903, -3.185356],
+          coordinates: [55.961251, -3.167225],
           postcode: "EH75QY"
         },
         180,
         new Date(2021, 10, 3, 16),
       );
       const activity13 = new Activity(
-        "help us run th disco",
-        Enable._id,
-        "We provide a wide range of support services for people who have a learning disability in Edinburgh. Edinburgh office: Birch House Bankhead Crossway South",
+        "Help us run the disco",
+        enable._id,
+        "We provide a wide range of support services for people who have a learning disability in Edinburgh. Edinburgh office: Birch House Bankhead Crossway South.",
         "late evening",
         {
-          description: " 95 Causewayside, Newington, Edinburgh ",
-          coordinates: [55.950903, -3.185356],
+          description: "95 Causewayside, Newington, Edinburgh",
+          coordinates: [55.937581, -3.180810],
           postcode: "EH91QG"
         },
         200,
         new Date(2021, 10, 3, 16),
       );
       const activity14 = new Activity(
-        "donate anything clothes  ",
-        Streetwork._id,
-        "We provide a range of homelessness services and support in Edinburgh. Our Streetwork service has been operating in Edinburgh for 25+ years.",
+        "Donations",
+        streetwork._id,
+        "We provide a range of services and support to the unhoused in Edinburgh. Our Streetwork service has been operating in Edinburgh for 25+ years.",
         "late evening",
         {
-          description: " 22 Holyrood Rd, Edinburgh",
-          coordinates: [55.950903, -3.185356],
+          description: "22 Holyrood Rd, Edinburgh",
+          coordinates: [55.949265, -3.182590],
           postcode: "EH88AF"
         },
         80,
         new Date(2021, 10, 3, 16),
       );
       const activity15 = new Activity(
-        "take some calls and give advice  ",
-        AlzheimerScotland - NationalOffice._id,
+        "Take some calls and give advice",
+        alzheimersScotlandNationalOffice._id,
         "The office aims to support people with dementia, their families, relatives and friends at any stage of the illness.",
         "3 hours",
         {
-          description: " 160 Dundee St, Edinburgh",
-          coordinates: [55.950903, -3.185356],
+          description: "160 Dundee St, Edinburgh",
+          coordinates: [55.940133, -3.219313],
           postcode: "EH111DQ"
         },
         120,
         new Date(2021, 10, 3, 16),
       );
       const activity16 = new Activity(
-        "help some move in",
-        FreshStart._id,
-        "Fresh Start is an Edinburgh based charity helping people who have been homeless get established in their new home.",
+        "Help someone move in",
+        freshStart._id,
+        "Fresh Start is an Edinburgh based charity helping people the previously unhoused get established in their new home.",
         "as long as it takes",
         {
-          description: "22-24 Ferry Rd Dr, Edinburgh ",
-          coordinates: [55.950903, -3.185356],
+          description: "22-24 Ferry Rd Dr, Edinburgh",
+          coordinates: [55.970538, -3.242664],
           postcode: "EEH44BR"
         },
         300,
         new Date(2021, 10, 3, 16),
       );
       const activity17 = new Activity(
-        "let's clean up the beach",
-        FriendsOfTheEarthScotland._id,
+        "Clean up the beach",
+        friendsOfTheEarthScotland._id,
         "Scotland's leading environmental campaigning organisation, working for environmental & climate justice and campaigning for the planet and its people.",
         "2 hours",
         {
-          description: "Thorn House, 5 Rose St, Edinburgh ",
-          coordinates: [55.950903, -3.185356],
+          description: "Thorn House, 5 Rose St, Edinburgh",
+          coordinates: [55.953142, -3.194653],
           postcode: "EH22PR"
         },
         100,
         new Date(2021, 10, 3, 16),
       );
       const activity18 = new Activity(
-        "help by getting the shopping in ",
-        AgeScotland._id,
+        "Help by getting the shopping in",
+        ageScotland._id,
         "Age Scotland is the leading charity representing older people in Scotland and supporting their rights and interests. We want everyone to love later life.",
         "2 hours",
         {
           description: "160 Causewayside, Edinburgh",
-          coordinates: [55.950903, -3.185356],
+          coordinates: [55.936292, -3.180141],
           postcode: "EH9 1PR"
         },
         180,
         new Date(2021, 10, 3, 16),
       );
       const activity19 = new Activity(
-        "help by donating old baby things",
-        PregnancyCounselling&Care._id,
-        "Pregnancy Counselling & Care (Scotland) has been supporting families in Edinburgh and the Lothians for over 40 years",
+        "Donations",
+        pregnancyCounsellingCare._id,
+        "Pregnancy Counselling & Care Scotland has been supporting families in Edinburgh and the Lothians for over 40 years.",
         "2 hours",
         {
           description: "24A Haddington Pl, Edinburgh",
-          coordinates: [55.950903, -3.185356],
+          coordinates: [55.960204, -3.182338],
           postcode: "EH74AF"
         },
         150,
         new Date(2021, 10, 3, 16),
       );
       const activity20 = new Activity(
-        "help out our shop",
-        PregnancyCounselling&Care._id,
-        "The Cancer Research UK Edinburgh Centre brings together cancer scientists and clinicians from across the University of Edinburgh",
+        "Help out our shop",
+        pregnancyCounsellingCare._id,
+        "The Cancer Research UK Edinburgh Centre brings together cancer scientists and clinicians from across the University of Edinburgh.",
         "2 hours",
         {
           description: "11 S Clerk St, Newington, Edinburgh",
-          coordinates: [55.950903, -3.185356],
+          coordinates: [55.941371, -3.181378],
           postcode: "EH8 9JD"
         },
         100,
         new Date(2021, 10, 3, 16),
       );
-      return activitiesCollection.insertMany([activity1, activity2, activity3, activity5, activity6,
+      return activitiesCollection.insertMany([activity1, activity2, activity3, activity4, activity5, activity6,
         activity7, activity8, activity9, activity10, activity11, activity12, activity13, activity14, 
         activity15, activity16, activity17, activity18, activity19, activity20])
     }).then(() => client.close())
