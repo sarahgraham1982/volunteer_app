@@ -1,4 +1,3 @@
-import '../css/Activities.css'
 import ActivityList from "../components/ActivityList";
 import ActivityForm from "../components/ActivityForm";
 import { useState, useEffect } from 'react';
@@ -39,7 +38,7 @@ const Activities = ({charity}) => {
 
   return (
     <>
-      <ActivityForm addActivity={addActivity} />
+      <ActivityForm charity={charity} addActivity={addActivity} />
       <ActivityList activities={activities} deleteActivity={deleteActivity}/>
     </>
   );
