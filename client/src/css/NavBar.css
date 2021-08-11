@@ -1,8 +1,8 @@
 
 .NavBar {
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(160, 18, 173);
     overflow: hidden;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibre, 'Trebuchet MS', sans-serif;
     
   }
   
@@ -59,3 +59,4 @@
   .NavBar ul {
     list-style-type: none;
   }
+  
