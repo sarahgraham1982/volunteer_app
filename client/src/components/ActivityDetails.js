@@ -1,8 +1,9 @@
-import React from 'react';
+import { useState } from 'react';
 import Collapsible from 'react-collapsible';
 import '../css/ActivityDetails.css';
 
 const ActivityDetails = ({ activity, apply, applied }) => {
+
   const datetime = new Date(activity.datetime)
   return (
     <div className="activity-detail">
