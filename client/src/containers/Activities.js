@@ -24,7 +24,11 @@ const Activities = ({ user }) => {
 
   useEffect(() => {
     resetActivities();
-  }, [activities])
+  }, [activities]);
+
+  const resetActivities = () => {
+    setFilteredActivities(activities);
+  }
 
   const getActivitiesByCharity = (event) => {
     const activitiesByCharity = activities.filter(
@@ -32,10 +36,6 @@ const Activities = ({ user }) => {
     );
     setFilteredActivities(activitiesByCharity);
   };
-
-  const resetActivities = () => {
-    setFilteredActivities(activities);
-  }
 
   const handleChange = () => {
     if (listView) {
@@ -81,7 +81,11 @@ const Activities = ({ user }) => {
           activities={filteredActivities}
         />
       ) : (
-        <ActivityMap user={user} apply={apply} activities={filteredActivities} />
+        <ActivityMap 
+          user={user} 
+          apply={apply} 
+          activities={filteredActivities} 
+        />
       )}
 
     </>
