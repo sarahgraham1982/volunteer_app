@@ -1,7 +1,7 @@
 <!-- We can obviously rename this -->
 # Volunteer App 
 
-An app that incentivizes volunteers with tangiible rewards for voluntary tasks carried out.
+An app for incentivising volunteers with tangible discounts and rewards. During the pandemic, charities saw a decrease in volunteers, charity shops were closed and there was an increase in the need for charities such as Womens Aid and Domestic Abuse charities. We created a brand new concept in volunteering apps that does not currently exist with the goal of increasing volunteer numbers.
 
 ## Getting Started
 
