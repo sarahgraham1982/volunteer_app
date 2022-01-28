@@ -1,7 +1,7 @@
 <!-- We can obviously rename this -->
 # Volunteer App 
 
-Description of App...
+An app that incentivizes volunteers with tangiible rewards for voluntary tasks carried out.
 
 ## Getting Started
 
